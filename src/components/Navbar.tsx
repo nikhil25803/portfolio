@@ -5,7 +5,7 @@ const Navbar = () => {
         <div className="text-2xl text-textWhite ">
           <span className="text-textPrimary mr-1">$</span>nikhil raj.
         </div>
-        <div className="flex flex-row justify-evenly items-center gap-5 text-lg text-textGray ">
+        <div className="hidden md:flex flex-row justify-evenly items-center gap-5 text-lg text-textGray">
           <div className="hover-border">
             <span className="text-textPrimary">/</span>projects
           </div>

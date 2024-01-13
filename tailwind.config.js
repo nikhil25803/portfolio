@@ -7,6 +7,7 @@ export default {
       textPrimary: "#C778DD",
       textGray: "#ABB2BF",
       textWhite: "#FFFFFF",
+      textBlack: "#000000",
     },
     fontFamily: {
       firaCode: ["Fira Code"],

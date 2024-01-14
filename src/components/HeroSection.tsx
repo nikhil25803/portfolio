@@ -23,7 +23,7 @@ const HeroSection = () => {
               <span className="text-textPrimary">scalable and robust</span>{" "}
               backend architectures.
             </div>
-            <div className="text-base md:text-xl">
+            <div className="text-base lg:text-xl">
               When I'm not watching{" "}
               <span className="text-textPrimary">movies 🎬</span>, I build
               projects, participate in

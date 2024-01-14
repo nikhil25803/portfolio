@@ -14,7 +14,7 @@ const About = () => {
           <span className="text-textPrimary mr-1">/</span>about-me
         </div>
         <div className="grid grid-cols-1 justify-center items-center gap-5 mb-10">
-          <div className="mt-5 flex flex-col gap-5 text-base md:text-lg ">
+          <div className="mt-5 flex flex-col gap-5 text-base lg:text-xl">
             <p>
               Hello! I'm <span className="text-textPrimary">Nikhil Raj</span>, a
               passionate computer science student currently pursuing my

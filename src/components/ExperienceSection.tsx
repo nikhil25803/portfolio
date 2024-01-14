@@ -8,9 +8,15 @@ const ExperienceSection = () => {
       <div className="max-w-[1280px] mx-auto flex flex-col items-start p-5 text-textWhite">
         <div className="flex flex-row justify-between w-full items-center  py-2">
           <div className="text-2xl md:text-3xl lg:text-4xl ">
-            <span className="text-textPrimary mr-1">$</span>expereince
+            <span className="text-textPrimary mr-1">$</span>experience
           </div>
-          <div className="hover-border">View all ~~~{">"}</div>
+          <a
+            href="/experience"
+            className="hover-border text-textWhite"
+            style={{ textDecoration: "None" }}
+          >
+            View all ~~~{">"}
+          </a>
         </div>
         <div className="mt-5 space-y-10">
           <ExperienceCard

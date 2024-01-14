@@ -11,9 +11,9 @@ interface ProjectInfo {
 
 const ProjectsCard = (props: ProjectInfo) => {
   return (
-    <div className=" rounded-lg overflow-hidden shadow-2xl hover:drop-shadow-2xl flex flex-col ">
+    <div className=" rounded-lg overflow-hidden hover:shadow-2xl flex flex-col ">
       <img
-        className="w-full h-[350px] md:h-[250px] lg:h-[375px] overflow-hidden"
+        className="hidden md:block w-full h-[350px] md:h-[250px] lg:h-[375px] overflow-hidden"
         src={props.imageurl}
         alt={props.projectname}
       />

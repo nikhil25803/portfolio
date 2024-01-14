@@ -10,7 +10,13 @@ const ExperienceSection = () => {
           <div className="text-2xl md:text-3xl lg:text-4xl ">
             <span className="text-textPrimary mr-1">$</span>expereince
           </div>
-          <div className="hover-border">View all ~~~{">"}</div>
+          <a
+            href="/experience"
+            className="hover-border text-textWhite"
+            style={{ textDecoration: "None" }}
+          >
+            View all ~~~{">"}
+          </a>
         </div>
         <div className="mt-5 space-y-10">
           <ExperienceCard

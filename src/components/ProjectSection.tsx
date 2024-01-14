@@ -10,7 +10,13 @@ const ProjectSection = () => {
           <div className="text-2xl md:text-3xl lg:text-4xl ">
             <span className="text-textPrimary mr-1">$</span>projects
           </div>
-          <div className="hover-border">View all ~~~{">"}</div>
+          <a
+            href="/projects"
+            style={{ textDecoration: "None" }}
+            className="hover-border text-textWhite"
+          >
+            View all ~~~{">"}
+          </a>
         </div>
         <div className="mt-5 grid grid-cols-1 md:grid-cols-2  gap-5">
           {projectData.map((_pr, index) => {

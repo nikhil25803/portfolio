@@ -88,7 +88,7 @@ export const PROJECTDATA = [
   },
   {
     imageurl: IMAGES.projectFoodvision,
-    projectname: "FoodVision",
+    projectname: "Food Vision",
     link: [
       {
         name: "GitHub",

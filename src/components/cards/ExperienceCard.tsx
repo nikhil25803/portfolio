@@ -9,7 +9,7 @@ interface ExperienceCardDetails {
 
 const ExperienceCard = (props: ExperienceCardDetails) => {
   return (
-    <div className="flex flex-col gap-5 border-0 border-solid border-l-2 border-textGray px-4 rounded-lg">
+    <div className="flex flex-col gap-5 border-0 border-solid border-l-2 border-textGray px-4 py-4 rounded-lg hover:shadow-2xl">
       <div className="text-xl md:text-3xl lg:text-3xl  text-textPrimary">
         {props.position}
       </div>

@@ -8,18 +8,44 @@ const Footer = () => {
         <div className="flex flex-row justify-between items-center">
           <div className="flex flex-col ">
             <div className="text-lg lg:text-xl mr-2">Nikhil Raj</div>
-            <div className="text-base lg:text-lg text-textGray">
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=nikhil25803@google.com"
+              style={{ textDecoration: "None" }}
+              target="_blank"
+              className="text-base lg:text-lg text-textGray"
+            >
               nikhil25803@gmail.com
-            </div>
+            </a>
           </div>
           <div className=" text-xl lg:text-2xl flex flex-row gap-5">
-            <FaGithub className="hover-border w-fit p-2" />{" "}
-            <FaLinkedin className="hover-border w-fit p-2" />
-            <FaSquareXTwitter className="hover-border w-fit p-2" />
+            <a
+              href="https://github.com/nikhil25803"
+              style={{ textDecoration: "None" }}
+              className="text-textWhite"
+              target="_blank"
+            >
+              <FaGithub className="hover-border w-fit p-2" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/nikhil25803/"
+              style={{ textDecoration: "None" }}
+              className="text-textWhite"
+              target="_blank"
+            >
+              <FaLinkedin className="hover-border w-fit p-2" />
+            </a>
+            <a
+              href="https://twitter.com/humans_write"
+              style={{ textDecoration: "None" }}
+              className="text-textWhite"
+              target="_blank"
+            >
+              <FaSquareXTwitter className="hover-border w-fit p-2" />
+            </a>
           </div>
         </div>
         <div className="text-center mt-10 text-textGray">
-          © Copyright 2022. Made by Nikhil Raj
+          © Copyright 2024. Made by Nikhil Raj
         </div>
       </div>
     </footer>

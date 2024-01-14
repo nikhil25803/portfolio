@@ -11,35 +11,76 @@ const About = () => {
         <div className="grid grid-cols-1 justify-center items-center gap-5 mb-10">
           <div className="mt-5 flex flex-col gap-5 text-base md:text-lg ">
             <p>
-              Hello! I'm Nikhil Raj, a passionate computer science student
-              currently pursuing my Bachelor's in Technology (with AI and ML) at
-              Heritage Institute of Technology, Kolkata, India.
+              Hello! I'm <span className="text-textPrimary">Nikhil Raj</span>, a
+              passionate computer science student currently pursuing my
+              Bachelor's in Technology (with AI and ML) at{" "}
+              <span className="text-textPrimary">
+                Heritage Institute of Technology, Kolkata, India.
+              </span>
             </p>
             <p>
               Alongside my studies, I've immersed myself in the world of
               technology, honing my skills in various programming languages like
-              Python, JavaScript, and C++. My proficiency extends to frameworks
-              such as Django, Django DRF, Fast API, React, Express.js, and
-              Node.js, complemented by a strong foundation in databases like
-              MongoDB, PostgreSQL, MySQL, and Firebase.
+              <span className="text-textPrimary"> Python</span>,{" "}
+              <span className="text-textPrimary">JavaScript</span>, and{" "}
+              <span className="text-textPrimary">C++</span>. My proficiency
+              extends to frameworks such as{" "}
+              <span className="text-textPrimary">Django</span>,{" "}
+              <span className="text-textPrimary">Django DRF</span>,{" "}
+              <span className="text-textPrimary">Fast API</span>,{" "}
+              <span className="text-textPrimary">React.js</span>,{" "}
+              <span className="text-textPrimary">Express.js</span>, and
+              <span className="text-textPrimary"> Node.js</span>, complemented
+              by a strong foundation in databases like
+              <span className="text-textPrimary"> MongoDB</span>,{" "}
+              <span className="text-textPrimary">PostgreSQL</span>,{" "}
+              <span className="text-textPrimary">MySQL</span>, and{" "}
+              <span className="text-textPrimary">Firebase</span>.
             </p>
             <p>
-              During my Backend Developer Internship at Edilitics, I contributed
-              significantly to building a no-code data analytics platform. My
-              responsibilities included implementing verification systems,
+              During my{" "}
+              <span className="text-textPrimary">
+                Backend Developer Internship at Edilitics
+              </span>
+              , I contributed significantly to building a{" "}
+              <span className="text-textPrimary">
+                no-code data analytics platform
+              </span>
+              . My responsibilities included implementing verification systems,
               notification services, and transforming data from various
-              databases for effective visualizations. As a Backend SDE Intern at
-              Tasklabs, I delved into web-assembly-based technologies, building
-              Python utility tools for document and image processing. I also
-              worked as a Technical Writer at Scaler Topics, producing
-              insightful articles on Django, Django REST Framework, and AI.
+              databases for effective visualizations. As a{" "}
+              <span className="text-textPrimary">
+                Backend SDE Intern at Tasklabs
+              </span>
+              , I delved into{" "}
+              <span className="text-textPrimary">
+                web-assembly-based technologies
+              </span>
+              , building Python utility tools for document and image processing.
+              I also worked as a{" "}
+              <span className="text-textPrimary">
+                Technical Writer at Scaler Topics
+              </span>
+              , producing insightful articles on{" "}
+              <span className="text-textPrimary">
+                Django, Django REST Framework, and AI
+              </span>
+              .
             </p>
             <p>
-              I've earned accolades such as winning Ethos'23, being a top
-              contributor at GSSoC'22, and obtaining certification as a Postman
-              Student Expert. Additionally, I hold positions of responsibility
-              as a project admin at GSSoC'23 and mentor at JWoC'23, showcasing
-              my commitment to fostering open-source initiatives.
+              I've earned accolades such as winning{" "}
+              <span className="text-textPrimary">Ethos'23</span>, a{" "}
+              <span className="text-textPrimary">national-level hackathon</span>{" "}
+              organized by{" "}
+              <span className="text-textPrimary">IIT Guwahati</span>. A{" "}
+              <span className="text-textPrimary">top contributor</span> at
+              <span className="text-textPrimary"> GSSoC'22</span>, and obtaining
+              certification as a Postman Student Expert. Additionally, I hold
+              positions of responsibility as a{" "}
+              <span className="text-textPrimary">project admin </span>
+              at <span className="text-textPrimary">GSSoC'23</span> and{" "}
+              <span className="text-textPrimary">mentor at JWoC'23</span>,
+              showcasing my commitment to fostering open-source initiatives.
             </p>
             <div>
               Let's connect and explore the endless possibilities at the

@@ -9,8 +9,11 @@ const ProjectsCard = () => {
         alt="Project Review It"
       />
       <div className="px-1 py-4">
-        <div className="hover-border w-fit text-textPrimary text-2xl mb-2">
-          Review It
+        <div className="flex flex-row items-center justify-between">
+          <div className="hover-border w-fit text-textPrimary text-2xl mb-2">
+            Review It
+          </div>
+          <div className="hover-border mr-2">GitHub</div>
         </div>
         <p className="text-base md:text-lg">
           Connect with mentors worldwide for personalized resume feedback on

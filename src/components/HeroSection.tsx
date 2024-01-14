@@ -26,9 +26,9 @@ const HeroSection = () => {
             <div className="text-base md:text-xl">
               When I'm not watching{" "}
               <span className="text-textPrimary">movies 🎬</span>, I build
-              projects, involved in
+              projects, participate in
               <span className="text-textPrimary"> Open-Source</span>{" "}
-              opportunities, and participate in{" "}
+              opportunities, and{" "}
               <span className="text-textPrimary">Hackathons</span> with friends.
             </div>
           </div>

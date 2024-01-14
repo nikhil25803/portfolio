@@ -63,7 +63,7 @@ const AboutMeSection = () => {
           </div>
           <div>
             <div className="text-textWhite mb-2 text-xl border-0 border-solid border-b-2 border-textPrimary">
-              <span className="text-textPrimary">/</span>social profiles
+              <span className="text-textPrimary">/</span>social-profiles
             </div>
             <div className="grid grid-cols-3 lg:grid-cols-3 gap-5">
               <SocialButtons

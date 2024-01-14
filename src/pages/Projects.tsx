@@ -1,7 +1,11 @@
+import { useEffect } from "react";
 import ProjectsCard from "../components/cards/ProjectsCard";
 import { PROJECTDATA } from "../data/project-data";
 
 const Projects = () => {
+  useEffect(() => {
+    document.title = "Nikhil Raj - Projects";
+  }, []);
   const projectData = PROJECTDATA;
   return (
     <section className="bg-backfroundColor w-full font-dmMono">

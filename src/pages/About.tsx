@@ -1,4 +1,9 @@
+import { useEffect } from "react";
+
 const About = () => {
+  useEffect(() => {
+    document.title = "Nikhil Raj - About";
+  }, []);
   return (
     <section
       className="bg-backfroundColor w-full font-dmMono"

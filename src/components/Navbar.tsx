@@ -2,22 +2,42 @@ const Navbar = () => {
   return (
     <nav className="bg-backfroundColor w-full font-dmMono">
       <div className="max-w-[1280px] mx-auto flex flex-row justify-between items-center px-5 py-10">
-        <div className="text-2xl text-textWhite ">
+        <a
+          className="text-2xl text-textWhite "
+          style={{ textDecoration: "None" }}
+          href="/"
+        >
           <span className="text-textPrimary mr-1">$</span>nikhil raj.
-        </div>
+        </a>
         <div className="hidden md:flex flex-row justify-evenly items-center gap-5 text-lg text-textGray">
-          <div className="hover-border">
+          <a
+            className="hover-border text-textWhite"
+            style={{ textDecoration: "None" }}
+            href="/projects"
+          >
             <span className="text-textPrimary">/</span>projects
-          </div>
-          <div className="hover-border">
+          </a>
+          <a
+            className="hover-border text-textWhite"
+            style={{ textDecoration: "None" }}
+            href="/experience"
+          >
             <span className="text-textPrimary">/</span>work
-          </div>
-          <div className="hover-border">
+          </a>
+          <a
+            className="hover-border text-textWhite"
+            style={{ textDecoration: "None" }}
+            href="/about"
+          >
             <span className="text-textPrimary">/</span>about
-          </div>
-          <div className="hover-border">
+          </a>
+          <a
+            className="hover-border text-textWhite "
+            style={{ textDecoration: "None" }}
+            href="#about-me-section"
+          >
             <span className="text-textPrimary">/</span>contact
-          </div>
+          </a>
         </div>
       </div>
     </nav>

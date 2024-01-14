@@ -5,7 +5,10 @@ import { SiGeeksforgeeks, SiLeetcode } from "react-icons/si";
 
 const AboutMeSection = () => {
   return (
-    <section className="bg-backfroundColor w-full font-dmMono">
+    <section
+      className="bg-backfroundColor w-full font-dmMono"
+      id="about-me-section"
+    >
       <div className="max-w-[1280px] mx-auto text-textWhite p-5 ">
         <div className="text-2xl md:text-3xl lg:text-4xl ">
           <span className="text-textPrimary mr-1">$</span>about-me

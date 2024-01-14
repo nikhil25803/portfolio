@@ -12,7 +12,7 @@ const ProjectsCard = () => {
         <div className="hover-border w-fit text-textPrimary text-2xl mb-2">
           Review It
         </div>
-        <p className="text-base">
+        <p className="text-base md:text-lg">
           Connect with mentors worldwide for personalized resume feedback on
           Review It, a free and open-source platform. Elevate your professional
           story, whether you're entering the job market or making a career

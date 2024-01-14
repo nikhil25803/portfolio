@@ -9,7 +9,6 @@ import {
   FaReact,
   FaSnowflake,
 } from "react-icons/fa";
-import { FaGolang } from "react-icons/fa6";
 import { IoLogoJavascript } from "react-icons/io";
 import {
   SiAmazondynamodb,
@@ -23,7 +22,7 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
-import { TbBrandNextjs } from "react-icons/tb";
+import { TbBrandCpp, TbBrandNextjs } from "react-icons/tb";
 import { IoLogoFirebase } from "react-icons/io5";
 const SkillsSection = () => {
   return (
@@ -41,7 +40,7 @@ const SkillsSection = () => {
               <FaPython />,
               <IoLogoJavascript />,
               <SiTypescript />,
-              <FaGolang />,
+              <TbBrandCpp />,
             ]}
           />
           <SkillsCard

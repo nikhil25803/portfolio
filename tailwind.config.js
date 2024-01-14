@@ -6,9 +6,12 @@ export default {
       backfroundColor: "#282C33",
       textPrimary: "#C778DD",
       textGray: "#ABB2BF",
+      textWhite: "#FFFFFF",
+      textBlack: "#000000",
     },
     fontFamily: {
       firaCode: ["Fira Code"],
+      dmMono: ["DM Mono", "monospace"],
     },
   },
   plugins: [],

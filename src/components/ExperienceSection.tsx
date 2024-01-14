@@ -1,6 +1,8 @@
+import { EXPERIENCEDATA } from "../data/experience-data";
 import ExperienceCard from "./cards/ExperienceCard";
 
 const ExperienceSection = () => {
+  const experienceData = EXPERIENCEDATA[0];
   return (
     <section className="bg-backfroundColor w-full font-dmMono">
       <div className="max-w-[1280px] mx-auto flex flex-col items-start p-5 text-textWhite">
@@ -12,16 +14,12 @@ const ExperienceSection = () => {
         </div>
         <div className="mt-5 space-y-10">
           <ExperienceCard
-            position="Backend Developer Intern"
-            companyName="Edilitics"
-            fromDate="July 2023"
-            toDate="October 2023"
-            points={[
-              "Contributed to building the backend for a no-code data analytic platform, leveraging Python, Fast API for developing REST APIs, MongoDB as a database, and Redis for caching.",
-              "Developed a robust OTP authentication system for secure user authorization and implemented in-app, Slack, and email notifications using Python and FastAPI.",
-              "Transformed data from MongoDB and other databases into structured formats, creating diverse visualizations like heatmaps, box plots, and radar charts to effectively represent complex data.",
-            ]}
-            skillsUsed="Back-End Web Development · REST APIs · MongoDB · FastAPI · Python (Programming Language)"
+            position={experienceData.position}
+            companyName={experienceData.companyName}
+            fromDate={experienceData.fromDate}
+            toDate={experienceData.toDate}
+            points={experienceData.points}
+            skillsUsed={experienceData.skillsUsed}
           />
         </div>
       </div>

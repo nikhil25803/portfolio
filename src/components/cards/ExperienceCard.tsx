@@ -16,7 +16,7 @@ const ExperienceCard = (props: ExperienceCardDetails) => {
       <div className="text-lg md:text-xl lg:text-2xl">
         {props.companyName} | {props.fromDate} - {props.toDate}
       </div>
-      <div className="space-y-2 text-base lg:text-xl">
+      <div className="space-y-2 text-base md:text-lg">
         {props.points.map((point) => {
           return (
             <p key={point}>
@@ -26,7 +26,9 @@ const ExperienceCard = (props: ExperienceCardDetails) => {
           );
         })}
       </div>
-      <div className="text-textPrimary">Skills: {props.skillsUsed}</div>
+      <div className="text-textPrimary text-base md:text-lg">
+        Skills: {props.skillsUsed}
+      </div>
     </div>
   );
 };

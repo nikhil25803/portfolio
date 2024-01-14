@@ -22,7 +22,7 @@ const Navbar = () => {
             style={{ textDecoration: "None" }}
             href="/experience"
           >
-            <span className="text-textPrimary">/</span>work
+            <span className="text-textPrimary">/</span>experience
           </a>
           <a
             className="hover-border text-textWhite"

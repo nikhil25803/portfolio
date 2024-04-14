@@ -9,6 +9,11 @@ const IMAGES = {
   projectCountreps: new URL("./ProjectCountReps.png", import.meta.url).href,
   projectFoodvision: new URL("./ProjectFoodVision.png", import.meta.url).href,
   projectScrapeup: new URL("./ProjectScrapeUp.png", import.meta.url).href,
+  projectNutriVista: new URL("./ProjectNutriVista.png", import.meta.url).href,
+  prjectBloggingPlatform: new URL(
+    "./ProjectBloggingPlatform.png",
+    import.meta.url
+  ).href,
 };
 
 export default IMAGES;

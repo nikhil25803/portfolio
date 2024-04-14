@@ -27,6 +27,64 @@ export const PROJECTDATA = [
     ],
   },
   {
+    imageurl: IMAGES.projectNutriVista,
+    projectname: "Nutri Vista",
+    link: [
+      {
+        name: "GitHub",
+        url: "https://github.com/nikhil25803/nutri-vista",
+      },
+      {
+        name: "Live",
+        url: "https://nutrivista.tech/",
+      },
+    ],
+    projectdetails:
+      "Nutri Vista is a user-friendly nutrition analysis platform that simplifies meal tracking and monitoring, empowering users to effortlessly make healthier choices while providing a personalized dashboard with graphical representation for progress tracking.",
+    skillsUsed: ["TypeScript", "Next.js", "Mongo DB"],
+  },
+  {
+    imageurl: IMAGES.prjectBloggingPlatform,
+    projectname: "Microservice Blogging API",
+    link: [
+      {
+        name: "GitHub",
+        url: "https://github.com/nikhil25803/blogging-platform",
+      },
+    ],
+    projectdetails:
+      "The Blogging Platform API utilizes a microservices architecture with NodeJS, Express.js, Postgres, and Redis, facilitating CRUD operations, authentication, keyword search, and recommendation features. It emphasizes performance optimization, security measures, and scalability via Docker orchestration and thorough unit testing.",
+    skillsUsed: [
+      "Javascript",
+      "Node.js",
+      "Express.js",
+      "Postgres",
+      "Redis",
+      "Prisma",
+      "Docker",
+    ],
+  },
+  {
+    imageurl: IMAGES.projectMicroservice,
+    projectname: "FastAPI + Microservices",
+    link: [
+      {
+        name: "GitHub",
+        url: "https://github.com/nikhil25803/fastapi-microservice",
+      },
+    ],
+    projectdetails:
+      "A Warehouse-Store system where users can manage products in the warehouse and place orders in the store, with communication facilitated by Redis, and a user interface provided by ReactJS. The project is scripted in Python, JavaScript, and utilizes shell scripting for automation.",
+    skillsUsed: [
+      "Python",
+      "Fast API",
+      "Redis",
+      "Javascript",
+      "SQLite",
+      "Shell",
+    ],
+  },
+  {
     imageurl: IMAGES.projectJobsapi,
     projectname: "Jobs API",
     link: [
@@ -67,24 +125,21 @@ export const PROJECTDATA = [
     ],
   },
   {
-    imageurl: IMAGES.projectMicroservice,
-    projectname: "FastAPI + Microservices",
+    imageurl: IMAGES.projectScrapeup,
+    projectname: "Scrape Up",
     link: [
       {
         name: "GitHub",
-        url: "https://github.com/nikhil25803/fastapi-microservice",
+        url: "https://github.com/nikhil25803/scrape-up",
+      },
+      {
+        name: "PyPi",
+        url: "https://pypi.org/project/scrape-up/",
       },
     ],
     projectdetails:
-      "A Warehouse-Store system where users can manage products in the warehouse and place orders in the store, with communication facilitated by Redis, and a user interface provided by ReactJS. The project is scripted in Python, JavaScript, and utilizes shell scripting for automation.",
-    skillsUsed: [
-      "Python",
-      "Fast API",
-      "Redis",
-      "Javascript",
-      "SQLite",
-      "Shell",
-    ],
+      "An alternative to APIs, Scrape Up is a Python package for web scraping. It allows you to extract data from platforms like GitHub, Twitter, Instagram, or any other website that contains valuable information. It enables you to gather data through programming.",
+    skillsUsed: ["Python", "Beautiful Soup"],
   },
   {
     imageurl: IMAGES.projectFoodvision,
@@ -118,22 +173,5 @@ export const PROJECTDATA = [
     projectdetails:
       "A customizable computer vision application that helps you track and count the reps during the exercises like sit-ups, push-ups, dumble presses, and other exercises. With the support of a database, you can even keep a track of your data.",
     skillsUsed: ["Python", "Open CV", "SQLite"],
-  },
-  {
-    imageurl: IMAGES.projectScrapeup,
-    projectname: "Scrape Up",
-    link: [
-      {
-        name: "GitHub",
-        url: "https://github.com/nikhil25803/scrape-up",
-      },
-      {
-        name: "PyPi",
-        url: "https://pypi.org/project/scrape-up/",
-      },
-    ],
-    projectdetails:
-      "An alternative to APIs, Scrape Up is a Python package for web scraping. It allows you to extract data from platforms like GitHub, Twitter, Instagram, or any other website that contains valuable information. It enables you to gather data through programming.",
-    skillsUsed: ["Python", "Beautiful Soup"],
   },
 ];

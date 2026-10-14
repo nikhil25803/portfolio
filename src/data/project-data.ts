@@ -2,6 +2,18 @@ import IMAGES from "../images/Images";
 import kafkaesqueImage from "../assets/project-kafkaesque.png";
 import purrpeekImage from "../assets/project-purrpeek.png";
 import wordlyImage from "../assets/project-wordly.png";
+import bloggingPlatformThumbnail from "../assets/thumbnails/projects/blogging-platform.webp";
+import countRepsThumbnail from "../assets/thumbnails/projects/count-reps.webp";
+import fastapiMicroserviceThumbnail from "../assets/thumbnails/projects/fastapi-microservice.webp";
+import foodVisionThumbnail from "../assets/thumbnails/projects/food-vision.webp";
+import fundRaisersThumbnail from "../assets/thumbnails/projects/fund-raisers.webp";
+import jobsApiThumbnail from "../assets/thumbnails/projects/jobs-api.webp";
+import kafkaesqueThumbnail from "../assets/thumbnails/projects/kafkaesque.webp";
+import nutriVistaThumbnail from "../assets/thumbnails/projects/nutri-vista.webp";
+import purrpeekThumbnail from "../assets/thumbnails/projects/purrpeek.webp";
+import reviewItThumbnail from "../assets/thumbnails/projects/review-it.webp";
+import scrapeUpThumbnail from "../assets/thumbnails/projects/scrape-up.webp";
+import wordlyThumbnail from "../assets/thumbnails/projects/wordly.webp";
 import type { Project } from "../types";
 
 export const PROJECTS: Project[] = [
@@ -12,6 +24,7 @@ export const PROJECTS: Project[] = [
       "A read only Kafka inspector built for understanding a cluster before it becomes an incident.",
     githubUrl: "https://github.com/nikhil25803/kafkaesque",
     image: kafkaesqueImage,
+    thumbnail: kafkaesqueThumbnail,
     imageAlt: "Kafkaesque product banner",
     tech: ["Go", "Kafka", "HTMX", "PostgreSQL", "Docker"],
     featured: true,
@@ -72,6 +85,7 @@ export const PROJECTS: Project[] = [
       "One word, one day, one terminal: a persistent daily word game for the command line.",
     githubUrl: "https://github.com/nikhil25803/wordly",
     image: wordlyImage,
+    thumbnail: wordlyThumbnail,
     imageAlt: "Wordly terminal game banner",
     tech: ["Go", "Bubble Tea", "Lip Gloss", "Cobra", "SQLite"],
     featured: true,
@@ -128,6 +142,7 @@ export const PROJECTS: Project[] = [
       "System information from a cat's perspective, across every major platform. Purr approved.",
     githubUrl: "https://github.com/nikhil25803/purrpeek",
     image: purrpeekImage,
+    thumbnail: purrpeekThumbnail,
     imageAlt: "Purrpeek rendering system information in a terminal",
     tech: ["Go", "Cobra", "YAML", "Terminal Graphics", "Cross platform"],
     featured: true,
@@ -196,6 +211,7 @@ export const PROJECTS: Project[] = [
       "An open platform for receiving focused résumé feedback from a chosen mentor.",
     githubUrl: "https://github.com/nikhil25803/ReviewIt",
     image: IMAGES.projectReviewIt,
+    thumbnail: reviewItThumbnail,
     imageAlt: "Review It résumé feedback platform",
     tech: [
       "Python",
@@ -226,6 +242,7 @@ export const PROJECTS: Project[] = [
       "Nutrition analysis that turns everyday meal notes into trackable insights.",
     githubUrl: "https://github.com/nikhil25803/nutri-vista",
     image: IMAGES.projectNutriVista,
+    thumbnail: nutriVistaThumbnail,
     imageAlt: "Nutri Vista nutrition dashboard",
     tech: ["TypeScript", "Next.js", "MongoDB", "NextAuth", "Browser Cache"],
     overview: [
@@ -249,6 +266,7 @@ export const PROJECTS: Project[] = [
       "A blogging backend built around services, with search, recommendations, caching, and tests.",
     githubUrl: "https://github.com/nikhil25803/blogging-platform",
     image: IMAGES.prjectBloggingPlatform,
+    thumbnail: bloggingPlatformThumbnail,
     imageAlt: "Microservice Blogging API preview",
     tech: ["Node.js", "Express", "PostgreSQL", "Redis", "Prisma", "Docker"],
     commands: [
@@ -285,6 +303,7 @@ export const PROJECTS: Project[] = [
     tagline: "A warehouse and store system connected through Redis Streams.",
     githubUrl: "https://github.com/nikhil25803/fastapi-microservice",
     image: IMAGES.projectMicroservice,
+    thumbnail: fastapiMicroserviceThumbnail,
     imageAlt: "FastAPI microservice warehouse and store interface",
     tech: ["Python", "FastAPI", "Redis Streams", "React", "SQLite", "Shell"],
     overview: [
@@ -308,6 +327,7 @@ export const PROJECTS: Project[] = [
       "A backend for job listings, applications, recruiters, and candidate selection.",
     githubUrl: "https://github.com/nikhil25803/jobs-api",
     image: IMAGES.projectJobsapi,
+    thumbnail: jobsApiThumbnail,
     imageAlt: "Jobs API project preview",
     tech: ["Node.js", "Express", "MongoDB", "JWT", "AWS S3", "SendGrid"],
     commands: [{ label: "Install and start", code: "npm i\nnpm start" }],
@@ -332,6 +352,7 @@ export const PROJECTS: Project[] = [
       "An open fundraising platform for projects, communities, and startup ideas.",
     githubUrl: "https://github.com/nikhil25803/fundRaiser",
     image: IMAGES.projectFundsraiser,
+    thumbnail: fundRaisersThumbnail,
     imageAlt: "Fund Raisers crowdfunding platform",
     tech: ["Python", "Django", "Bootstrap", "SQLite", "JavaScript", "Razorpay"],
     commands: [
@@ -378,6 +399,7 @@ export const PROJECTS: Project[] = [
       "A Python package for extracting useful public data when a formal API is unavailable.",
     githubUrl: "https://github.com/nikhil25803/scrape-up",
     image: IMAGES.projectScrapeup,
+    thumbnail: scrapeUpThumbnail,
     imageAlt: "Scrape Up Python package preview",
     tech: ["Python", "Beautiful Soup", "Requests", "PyPI", "Web Scraping"],
     commands: [
@@ -404,6 +426,7 @@ export const PROJECTS: Project[] = [
       "A multiclass food image classifier with command line and desktop interfaces.",
     githubUrl: "https://github.com/nikhil25803/FoodVision",
     image: IMAGES.projectFoodvision,
+    thumbnail: foodVisionThumbnail,
     imageAlt: "Food Vision classifier preview",
     tech: ["Python", "TensorFlow", "Keras", "Pandas", "NumPy", "Tkinter"],
     commands: [
@@ -459,6 +482,7 @@ export const PROJECTS: Project[] = [
       "A customizable computer vision exercise counter with local progress tracking.",
     githubUrl: "https://github.com/nikhil25803/count-reps",
     image: IMAGES.projectCountreps,
+    thumbnail: countRepsThumbnail,
     imageAlt: "Count Reps exercise tracking application",
     tech: ["Python", "OpenCV", "MediaPipe", "SQLite", "Computer Vision"],
     commands: [

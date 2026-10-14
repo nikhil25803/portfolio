@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
-import profileImage from "../assets/profile/profile_.png";
-import profileImage1 from "../assets/profile/profile_1.png";
-import profileImage2 from "../assets/profile/profile_2.png";
-import profileImage3 from "../assets/profile/profile_3.png";
-import profileImage4 from "../assets/profile/profile_4.png";
+import profileImage1 from "../assets/thumbnails/profile/profile-1.webp";
+import profileImage2 from "../assets/thumbnails/profile/profile-2.webp";
+import profileImage3 from "../assets/thumbnails/profile/profile-3.webp";
+import profileImage4 from "../assets/thumbnails/profile/profile-4.webp";
+import profileImage from "../assets/thumbnails/profile/profile.webp";
 import type { ProfileImage } from "../types";
 import {
   pickNextImageIndex,

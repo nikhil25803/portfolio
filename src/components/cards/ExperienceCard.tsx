@@ -18,6 +18,8 @@ const ExperienceCard = ({
       alt={`${experience.company} company logo`}
       width="64"
       height="64"
+      loading="lazy"
+      decoding="async"
       className="h-16 w-16 shrink-0 rounded-md border border-textGray/30 bg-textWhite/5 object-cover"
     />
     <div className="min-w-0 flex-1">

@@ -1,8 +1,8 @@
-import cautioLogo from "../assets/companies/cautio.jpeg";
-import dashmedLogo from "../assets/companies/dashmed.jpeg";
-import ediliticsLogo from "../assets/companies/edilitics.jpeg";
-import scalerLogo from "../assets/companies/scaler.jpeg";
-import tasklabsLogo from "../assets/companies/tasklabs.jpeg";
+import cautioLogo from "../assets/thumbnails/companies/cautio.webp";
+import dashmedLogo from "../assets/thumbnails/companies/dashmed.webp";
+import ediliticsLogo from "../assets/thumbnails/companies/edilitics.webp";
+import scalerLogo from "../assets/thumbnails/companies/scaler.webp";
+import tasklabsLogo from "../assets/thumbnails/companies/tasklabs.webp";
 import type { ExperienceEntry } from "../types";
 
 export const EXPERIENCES: ExperienceEntry[] = [

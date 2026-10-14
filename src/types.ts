@@ -37,6 +37,7 @@ export interface Project {
   tagline: string;
   githubUrl: string;
   image: string;
+  thumbnail: string;
   imageAlt: string;
   tech: string[];
   overview: string[];

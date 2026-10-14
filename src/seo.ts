@@ -1,7 +1,7 @@
 import profileImage from "./assets/profile/profile_4.png";
 import { getProject, PROJECTS } from "./data/project-data";
 
-export const SITE_ORIGIN = "https://nikhilraj.vercel.app";
+export const SITE_ORIGIN = "https://nikhilraj.space";
 
 export interface SeoData {
   title: string;

@@ -23,7 +23,7 @@ const socialLinks = [
   {
     href: "https://leetcode.com/nikhil25803/",
     label: "LeetCode",
-    icon: <SiLeetcode />,
+    icon: <SiLeetcode aria-hidden="true" focusable="false" />,
   },
   {
     href: "https://www.kaggle.com/nikhil25803",
@@ -33,7 +33,7 @@ const socialLinks = [
   {
     href: "https://auth.geeksforgeeks.org/user/nikhil25803",
     label: "GeeksforGeeks",
-    icon: <SiGeeksforgeeks />,
+    icon: <SiGeeksforgeeks aria-hidden="true" focusable="false" />,
   },
 ];
 

@@ -6,7 +6,7 @@ const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const outputDirectory = resolve(projectRoot, "dist");
 const serverDirectory = resolve(projectRoot, "dist-server");
 const template = await readFile(resolve(outputDirectory, "index.html"), "utf8");
-const { PRERENDER_ROUTES, render } = await import(
+const { PRERENDER_ROUTES, SITE_ORIGIN, render } = await import(
   new URL("../dist-server/entry-server.js", import.meta.url)
 );
 
@@ -67,15 +67,11 @@ const sitemap = [
   '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
   ...PRERENDER_ROUTES.map(
     (route) =>
-      `  <url><loc>${new URL(route, "https://nikhilraj.vercel.app").href}</loc></url>`,
+      `  <url><loc>${new URL(route, SITE_ORIGIN).href}</loc></url>`,
   ),
   "</urlset>",
   "",
 ].join("\n");
 
 await writeFile(resolve(outputDirectory, "sitemap.xml"), sitemap);
-await writeFile(
-  resolve(outputDirectory, "robots.txt"),
-  "User-agent: *\nAllow: /\nSitemap: https://nikhilraj.vercel.app/sitemap.xml\n",
-);
 await rm(serverDirectory, { recursive: true, force: true });

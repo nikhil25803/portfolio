@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiArrowUpRight, FiMenu, FiX } from "react-icons/fi";
 import profileImage1 from "../assets/thumbnails/profile/profile-1.webp";
 import profileImage2 from "../assets/thumbnails/profile/profile-2.webp";
 import profileImage3 from "../assets/thumbnails/profile/profile-3.webp";
@@ -62,30 +62,41 @@ const Navbar = () => {
   );
 
   return (
-    <header className="site-container flex items-center justify-between pt-10 pb-8">
-      <div className="flex items-center gap-3">
-        {canShuffle ? (
-          <button
-            type="button"
-            className="rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-textPrimary"
-            aria-label="Show another profile photo"
-            onClick={() =>
-              setImageIndex((current) =>
-                pickNextImageIndex(current, profileImages.length),
-              )
-            }
-          >
-            {portrait}
-          </button>
-        ) : (
-          portrait
-        )}
-        <Link to="/" className="no-underline">
-          <span className="block text-lg font-medium text-textWhite">
-            Nikhil Raj
-          </span>
-          <span className="block text-sm text-textGray">engineer.</span>
-        </Link>
+    <header className="site-container flex items-start justify-between pt-10 pb-8">
+      <div className="flex flex-col items-start gap-2">
+        <div className="flex items-center gap-3">
+          {canShuffle ? (
+            <button
+              type="button"
+              className="rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-textPrimary"
+              aria-label="Show another profile photo"
+              onClick={() =>
+                setImageIndex((current) =>
+                  pickNextImageIndex(current, profileImages.length),
+                )
+              }
+            >
+              {portrait}
+            </button>
+          ) : (
+            portrait
+          )}
+          <Link to="/" className="no-underline">
+            <span className="block text-lg font-medium text-textWhite">
+              Nikhil Raj
+            </span>
+            <span className="block text-sm text-textGray">engineer.</span>
+          </Link>
+        </div>
+        <a
+          href="https://drive.google.com/file/d/1Jf6UxOy3fnhm6mBNdYIIJTg__vt48X96/view"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-1 text-sm"
+        >
+          Resume
+          <FiArrowUpRight aria-hidden="true" focusable="false" />
+        </a>
       </div>
 
       <div ref={menuRef} className="relative">

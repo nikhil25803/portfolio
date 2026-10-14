@@ -4,7 +4,6 @@ import { EXPERIENCES } from "../data/experience-data";
 
 const Experience = () => {
   useEffect(() => {
-    document.title = "Experience | Nikhil Raj";
     const id = window.location.hash.slice(1);
     if (id) document.getElementById(id)?.scrollIntoView({ block: "start" });
   }, []);

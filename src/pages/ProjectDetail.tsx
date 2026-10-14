@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { FaGithub } from "react-icons/fa";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { getProject } from "../data/project-data";
@@ -7,10 +6,6 @@ const ProjectDetail = () => {
   const { slug = "" } = useParams();
   const project = getProject(slug);
 
-  useEffect(() => {
-    if (project) document.title = `${project.name} | Nikhil Raj`;
-  }, [project]);
-
   if (!project) return <Navigate to="/projects" replace />;
 
   return (
@@ -18,7 +13,7 @@ const ProjectDetail = () => {
       <Link to="/projects" className="text-sm">← all projects</Link>
       <article className="project-detail mt-8">
         <header>
-          <p className="text-sm text-textGray">case study</p>
+          <p className="text-sm text-textGray">project details</p>
           <div className="mt-2 flex items-start justify-between gap-5">
             <div>
               <h1 className="text-3xl font-medium text-textWhite">{project.name}</h1>
@@ -34,7 +29,13 @@ const ProjectDetail = () => {
               <FaGithub />
             </a>
           </div>
-          <img src={project.image} alt={project.imageAlt} className="mt-8 w-full rounded-md border border-textGray/20" />
+          <img
+            src={project.image}
+            alt={project.imageAlt}
+            width="1200"
+            height="675"
+            className="project-hero mt-8 w-full rounded-md border border-textGray/20"
+          />
           <div className="mt-5 flex flex-wrap gap-2">
             {project.tech.map((item) => <span key={item} className="tech-pill">{item}</span>)}
           </div>
@@ -64,7 +65,13 @@ const ProjectDetail = () => {
             <h2><span>#</span>inside the project</h2>
             {project.gallery.map((image) => (
               <figure key={image.src}>
-                <img src={image.src} alt={image.alt} loading="lazy" />
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  width="1200"
+                  height="675"
+                  loading="lazy"
+                />
                 <figcaption>{image.caption}</figcaption>
               </figure>
             ))}

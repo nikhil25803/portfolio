@@ -1,6 +1,7 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import Seo from "./components/Seo";
 import Experience from "./pages/Experience";
 import Home from "./pages/Home";
 import PageNotFound from "./pages/PageNotFound";
@@ -9,7 +10,8 @@ import Projects from "./pages/Projects";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <>
+      <Seo />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -19,6 +21,6 @@ export default function App() {
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
-    </BrowserRouter>
+    </>
   );
 }

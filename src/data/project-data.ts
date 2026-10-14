@@ -1,15 +1,8 @@
 import IMAGES from "../images/Images";
+import kafkaesqueImage from "../assets/project-kafkaesque.png";
+import purrpeekImage from "../assets/project-purrpeek.png";
+import wordlyImage from "../assets/project-wordly.png";
 import type { Project } from "../types";
-
-const kafkaesqueImage = new URL(
-  "../assets/project-kafkaesque.png",
-  import.meta.url,
-).href;
-const wordlyImage = new URL("../assets/project-wordly.png", import.meta.url).href;
-const purrpeekImage = new URL(
-  "../assets/project-purrpeek.png",
-  import.meta.url,
-).href;
 
 export const PROJECTS: Project[] = [
   {
@@ -109,6 +102,18 @@ export const PROJECTS: Project[] = [
         code: "brew install nikhil25803/tap/purrpeek",
       },
       {
+        label: "Install or run with Nix",
+        code: "nix profile install github:nikhil25803/purrpeek\nnix run github:nikhil25803/purrpeek",
+      },
+      {
+        label: "Install with Scoop on Windows",
+        code: "scoop bucket add nikhil25803 https://github.com/nikhil25803/scoop-bucket\nscoop install purrpeek",
+      },
+      {
+        label: "Install on Linux",
+        code: "curl -fsSL https://raw.githubusercontent.com/nikhil25803/purrpeek/main/scripts/install.sh | sh",
+      },
+      {
         label: "Render a report",
         code: "purrpeek\npurrpeek --json",
       },
@@ -128,7 +133,7 @@ export const PROJECTS: Project[] = [
       "Optional YAML configuration controls which bundled images may be selected and which report fields are shown. User configuration merges over embedded defaults on each invocation, so changing a preference does not require rebuilding. A separate localization file can add or replace greetings by language and time of day. Invalid configuration is rejected with a concise error instead of silently producing a misleading report.",
     ],
     usage: [
-      "Install Purrpeek through Homebrew, Nix, Scoop, WinGet, the Linux installer, or a release archive. Package availability differs by platform, and the repository documents the exact supported commands and architectures.",
+      "Install Purrpeek through Homebrew, Nix, Scoop, the Linux installer, or a release archive. The Linux installer supports amd64 and arm64, verifies the release checksum, and installs the binary in /usr/local/bin. Windows release archives contain purrpeek.exe for a directory on PATH.",
       "Run `purrpeek` for the normal illustrated report. Add the JSON flag when another program needs the machine data, and combine it with verbose mode only when collection diagnostics are also useful. Help documents the small set of runtime flags.",
       "To personalize the output, create the optional YAML file in the platform configuration directory and select images or report fields. Add a greetings JSON file to extend messages based on the time of day. Because both files are loaded on every run, changes appear immediately.",
     ],

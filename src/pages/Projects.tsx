@@ -1,10 +1,7 @@
-import { useEffect } from "react";
 import ProjectsCard from "../components/cards/ProjectsCard";
 import { PROJECTS } from "../data/project-data";
 
 const Projects = () => {
-  useEffect(() => { document.title = "Projects | Nikhil Raj"; }, []);
-
   return (
     <main className="site-container">
       <header className="page-heading">

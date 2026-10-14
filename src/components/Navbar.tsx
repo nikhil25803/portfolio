@@ -41,6 +41,8 @@ const Navbar = () => {
     <img
       src={profileImages[imageIndex].src}
       alt={profileImages[imageIndex].alt}
+      width="64"
+      height="64"
       className="h-16 w-16 rounded-md border border-textGray/40 object-cover"
     />
   );

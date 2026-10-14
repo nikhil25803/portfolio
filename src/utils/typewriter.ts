@@ -6,6 +6,16 @@ export interface TypewriterState {
   phase: TypewriterPhase;
 }
 
+export const TYPEWRITER_DELAYS: Record<TypewriterPhase, number> = {
+  typing: 45,
+  holding: 5000,
+  deleting: 25,
+};
+
+export function getTypewriterDelay(phase: TypewriterPhase) {
+  return TYPEWRITER_DELAYS[phase];
+}
+
 export function advanceTypewriter(
   state: TypewriterState,
   quoteLength: number,

@@ -177,8 +177,17 @@
 
   .project-gallery img {
     width: 100%;
+    aspect-ratio: 16 / 9;
     border: 1px solid rgb(187 194 204 / 0.2);
     border-radius: 0.375rem;
+    background: rgb(0 0 0 / 0.2);
+    object-fit: contain;
+  }
+
+  .project-hero {
+    aspect-ratio: 16 / 9;
+    background: rgb(0 0 0 / 0.2);
+    object-fit: contain;
   }
 
   .project-gallery figcaption {
@@ -188,8 +197,10 @@
   }
 }
 
-.quote-block {
-  min-height: 9rem;
+.quote-copy {
+  display: flex;
+  min-height: 5.25rem;
+  align-items: center;
 }
 
 .typewriter-cursor {
@@ -244,6 +255,10 @@
 
   .site-container {
     width: calc(100% - 2rem);
+  }
+
+  .quote-copy {
+    min-height: 8.75rem;
   }
 }
 

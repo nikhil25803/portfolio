@@ -6,7 +6,9 @@ const ProjectsCard = ({ project }: { project: Project }) => (
   <article className="group flex gap-4 border-b border-textGray/20 py-5 first:pt-0 last:border-0 last:pb-0">
     <img
       src={project.image}
-      alt=""
+      alt={project.imageAlt}
+      width="64"
+      height="64"
       className="h-16 w-16 shrink-0 rounded-md border border-textGray/20 object-cover"
     />
     <div className="min-w-0 flex-1">
@@ -26,7 +28,7 @@ const ProjectsCard = ({ project }: { project: Project }) => (
       </div>
       <p className="mt-1 text-sm leading-6 text-detailText">{project.tagline}</p>
       <Link to={`/projects/${project.slug}`} className="mt-2 inline-block text-xs">
-        read case study →
+        read project details →
       </Link>
     </div>
   </article>

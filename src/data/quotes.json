@@ -1,52 +1,18 @@
 [
-  {
-    "quote": "It's a feature, not a bug.",
-    "by": "Bertram Gilfoyle",
-    "from": "Silicon Valley"
-  },
-  {
-    "quote": "I am the founder of Aviato.",
-    "by": "Erlich Bachman",
-    "from": "Silicon Valley"
-  },
-  {
-    "quote": "I eat the fish.",
-    "by": "Jian Yang",
-    "from": "Silicon Valley"
-  },
-  {
-    "quote": "Got a lot of work to do. I'll be in the pool.",
-    "by": "Richard Hendricks",
-    "from": "Silicon Valley"
-  },
-  {
-    "quote": "That's just money. It has no real value.",
-    "by": "Jared Dunn",
-    "from": "Silicon Valley"
-  },
-  {
-    "quote": "By definition, we're all pussies.",
-    "by": "Dinesh Chugtai",
-    "from": "Silicon Valley"
-  },
-  {
-    "quote": "Of course I'm afraid of her!",
-    "by": "Monica Hall",
-    "from": "Silicon Valley"
-  },
-  {
-    "quote": "I'm drawing thoughtful, zoological comparisons.",
-    "by": "Gavin Belson",
-    "from": "Silicon Valley"
-  },
-  {
-    "quote": "I have a boat.",
-    "by": "Big Head",
-    "from": "Silicon Valley"
-  },
-  {
-    "quote": "I was never enjoying it. I only eat it for the nutrients.",
-    "by": "Peter Gregory",
-    "from": "Silicon Valley"
-  }
+  { "quote": "It's a feature, not a bug.", "by": "Bertram Gilfoyle", "from": "Silicon Valley" },
+  { "quote": "It's not magic, it's talent and sweat. People like me, ensuring your packets get delivered, un-sniffed.", "by": "Bertram Gilfoyle", "from": "Silicon Valley" },
+  { "quote": "As far as Pied Piper is concerned, he's as pointless as Mass Effect 3's multiple endings.", "by": "Bertram Gilfoyle", "from": "Silicon Valley" },
+  { "quote": "People like to lie, Richard.", "by": "Bertram Gilfoyle", "from": "Silicon Valley" },
+  { "quote": "This guy f***s. Am I right?", "by": "Russ Hanneman", "from": "Silicon Valley" },
+  { "quote": "ROI. You know what that stands for? Return on investment? No. Radio on Internet.", "by": "Russ Hanneman", "from": "Silicon Valley" },
+  { "quote": "These are not the doors of a billionaire, Richard!", "by": "Russ Hanneman", "from": "Silicon Valley" },
+  { "quote": "It's not about how much you earn. It's about what you're worth. And who's worth the most? Companies that lose money.", "by": "Russ Hanneman", "from": "Silicon Valley" },
+  { "quote": "We are going to drink to re-billionizing.", "by": "Russ Hanneman", "from": "Silicon Valley" },
+  { "quote": "Our code is bad and you should feel bad.", "by": "Bertram Gilfoyle", "from": "Silicon Valley" },
+  { "quote": "I know talent when I see it.", "by": "Erlich Bachman", "from": "Silicon Valley" },
+  { "quote": "Steve Jobs died of cancer, Richard. He didn't die of being a p***y.", "by": "Erlich Bachman", "from": "Silicon Valley" },
+  { "quote": "I don't want to live in a world where someone else makes the world a better place better than we do.", "by": "Gavin Belson", "from": "Silicon Valley" },
+  { "quote": "If we can make your audio and video files smaller, we can make cancer smaller. And hunger. And AIDS.", "by": "Gavin Belson", "from": "Silicon Valley" },
+  { "quote": "They always travel in groups of five. The tall skinny guy, the short fat guy, the guy with the weird facial hair. They're like a boy band.", "by": "Gavin Belson", "from": "Silicon Valley" },
+  { "quote": "If I can't be a billionaire, I at least want to look like one.", "by": "Dinesh Chugtai", "from": "Silicon Valley" }
 ]

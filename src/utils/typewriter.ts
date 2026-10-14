@@ -8,7 +8,7 @@ export interface TypewriterState {
 
 export const TYPEWRITER_DELAYS: Record<TypewriterPhase, number> = {
   typing: 45,
-  holding: 5000,
+  holding: 3000,
   deleting: 25,
 };
 
@@ -40,6 +40,10 @@ export function advanceTypewriter(
   };
 }
 
-export function shouldAnimate(paused: boolean, reducedMotion: boolean) {
-  return !paused && !reducedMotion;
+export function shouldAnimate(
+  interactionPaused: boolean,
+  reducedMotion: boolean,
+  phase: TypewriterPhase,
+) {
+  return !reducedMotion && !(interactionPaused && phase === "holding");
 }

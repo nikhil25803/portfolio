@@ -28,7 +28,7 @@ const Quote = () => {
   }, []);
 
   useEffect(() => {
-    if (!shouldAnimate(interactionPaused, reducedMotion)) return;
+    if (!shouldAnimate(interactionPaused, reducedMotion, state.phase)) return;
 
     const timeout = window.setTimeout(
       () => setState((current) => advanceTypewriter(current, quote.quote.length, quotes.length)),
@@ -50,7 +50,7 @@ const Quote = () => {
 
   return (
     <figure
-      className="quote-block w-full border-l-2 border-textPrimary py-1 pl-4"
+      className="quote-block w-full border-y-2 border-textPrimary py-5 text-center"
       tabIndex={0}
       onMouseEnter={() => setInteractionPaused(true)}
       onMouseLeave={() => setInteractionPaused(false)}
@@ -59,11 +59,11 @@ const Quote = () => {
         if (!event.currentTarget.contains(event.relatedTarget)) setInteractionPaused(false);
       }}
     >
-      <blockquote className="quote-copy text-lg text-textWhite" aria-hidden="true">
+      <blockquote className="quote-copy justify-center text-center text-lg text-textWhite" aria-hidden="true">
         “{visibleQuote}<span className="typewriter-cursor" aria-hidden="true">|</span>”
       </blockquote>
       <p className="sr-only">“{quote.quote}”</p>
-      <figcaption className="mt-2 text-sm text-textGray">
+      <figcaption className="mt-2 text-center text-sm text-textGray">
         <span className="block text-textPrimary">{quote.by}</span>
         <span className="block">{quote.from}</span>
       </figcaption>

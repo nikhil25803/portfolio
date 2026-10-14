@@ -29,15 +29,17 @@ test("wraps from the final quote to the first", () => {
   assert.deepEqual(state, { quoteIndex: 0, characterCount: 0, phase: "typing" });
 });
 
-test("stops for pause and reduced motion preferences", () => {
-  assert.equal(shouldAnimate(false, false), true);
-  assert.equal(shouldAnimate(true, false), false);
-  assert.equal(shouldAnimate(false, true), false);
+test("pauses interactions only while holding and always respects reduced motion", () => {
+  assert.equal(shouldAnimate(false, false, "holding"), true);
+  assert.equal(shouldAnimate(true, false, "typing"), true);
+  assert.equal(shouldAnimate(true, false, "holding"), false);
+  assert.equal(shouldAnimate(true, false, "deleting"), true);
+  assert.equal(shouldAnimate(false, true, "typing"), false);
 });
 
 test("uses the requested typewriter timing", () => {
-  assert.deepEqual(TYPEWRITER_DELAYS, { typing: 45, holding: 5000, deleting: 25 });
-  assert.equal(getTypewriterDelay("holding"), 5000);
+  assert.deepEqual(TYPEWRITER_DELAYS, { typing: 45, holding: 3000, deleting: 25 });
+  assert.equal(getTypewriterDelay("holding"), 3000);
 });
 
 test("contains sixteen unique quotes", async () => {

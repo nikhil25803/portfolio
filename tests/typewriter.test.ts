@@ -42,13 +42,13 @@ test("uses the requested typewriter timing", () => {
   assert.equal(getTypewriterDelay("holding"), 3000);
 });
 
-test("contains sixteen unique quotes", async () => {
+test("contains thirteen unique quotes", async () => {
   const { readFile } = await import("node:fs/promises");
   const quotes = JSON.parse(
     await readFile(new URL("../src/data/quotes.json", import.meta.url), "utf8"),
   ) as Array<{ quote: string; by: string; from: string }>;
 
-  assert.equal(quotes.length, 16);
-  assert.equal(new Set(quotes.map(({ quote }) => quote)).size, 16);
+  assert.equal(quotes.length, 13);
+  assert.equal(new Set(quotes.map(({ quote }) => quote)).size, 13);
   assert.ok(quotes.every(({ quote, by, from }) => quote && by && from));
 });

@@ -1,4 +1,4 @@
-import profileImage from "./assets/profile.png";
+import profileImage from "./assets/profile/profile_4.png";
 import { getProject, PROJECTS } from "./data/project-data";
 
 export const SITE_ORIGIN = "https://nikhilraj.vercel.app";
@@ -17,6 +17,10 @@ const person = {
   "@id": `${SITE_ORIGIN}/#nikhil-raj`,
   name: "Nikhil Raj",
   jobTitle: "Backend and Distributed Systems Engineer",
+  worksFor: {
+    "@type": "Organization",
+    name: "Cautio",
+  },
   url: SITE_ORIGIN,
   image: new URL(profileImage, SITE_ORIGIN).href,
   sameAs: [
@@ -130,9 +134,24 @@ export function getSeoData(pathname: string): SeoData {
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: SITE_ORIGIN },
-            { "@type": "ListItem", position: 2, name: "Projects", item: canonicalPath("/projects") },
-            { "@type": "ListItem", position: 3, name: project.name, item: canonical },
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: SITE_ORIGIN,
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Projects",
+              item: canonicalPath("/projects"),
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: project.name,
+              item: canonical,
+            },
           ],
         },
       ],

@@ -8,7 +8,8 @@ export const PROJECTS: Project[] = [
   {
     slug: "kafkaesque",
     name: "Kafkaesque",
-    tagline: "A read only Kafka inspector built for understanding a cluster before it becomes an incident.",
+    tagline:
+      "A read only Kafka inspector built for understanding a cluster before it becomes an incident.",
     githubUrl: "https://github.com/nikhil25803/kafkaesque",
     image: kafkaesqueImage,
     imageAlt: "Kafkaesque product banner",
@@ -29,10 +30,26 @@ export const PROJECTS: Project[] = [
       },
     ],
     gallery: [
-      { src: IMAGES.kafkaesqueDashboard, alt: "Kafkaesque dashboard with cluster totals and health", caption: "Cluster dashboard" },
-      { src: IMAGES.kafkaesqueConsumers, alt: "Kafkaesque consumer groups with lag status", caption: "Consumer groups and lag status" },
-      { src: IMAGES.kafkaesqueLag, alt: "Kafkaesque partition lag and topic summary", caption: "Partition lag and topic summary" },
-      { src: IMAGES.kafkaesqueHealth, alt: "Kafkaesque cluster health diagnostics", caption: "Cluster health diagnostics" },
+      {
+        src: IMAGES.kafkaesqueDashboard,
+        alt: "Kafkaesque dashboard with cluster totals and health",
+        caption: "Cluster dashboard",
+      },
+      {
+        src: IMAGES.kafkaesqueConsumers,
+        alt: "Kafkaesque consumer groups with lag status",
+        caption: "Consumer groups and lag status",
+      },
+      {
+        src: IMAGES.kafkaesqueLag,
+        alt: "Kafkaesque partition lag and topic summary",
+        caption: "Partition lag and topic summary",
+      },
+      {
+        src: IMAGES.kafkaesqueHealth,
+        alt: "Kafkaesque cluster health diagnostics",
+        caption: "Cluster health diagnostics",
+      },
     ],
     overview: [
       "Kafkaesque is a lightweight Kafka observability tool for engineers who need a fast, safe picture of a cluster. It exposes brokers, topics, partitions, consumer groups, lag, assignments, and health information without mutating the cluster. The project began as a command line inspector and grew into a server with a read only HTTP API and an embedded responsive interface.",
@@ -51,7 +68,8 @@ export const PROJECTS: Project[] = [
   {
     slug: "wordly",
     name: "Wordly",
-    tagline: "One word, one day, one terminal: a persistent daily word game for the command line.",
+    tagline:
+      "One word, one day, one terminal: a persistent daily word game for the command line.",
     githubUrl: "https://github.com/nikhil25803/wordly",
     image: wordlyImage,
     imageAlt: "Wordly terminal game banner",
@@ -68,10 +86,26 @@ export const PROJECTS: Project[] = [
       },
     ],
     gallery: [
-      { src: IMAGES.wordlyHome, alt: "Wordly home menu in a terminal", caption: "Home menu" },
-      { src: IMAGES.wordlyGameplay, alt: "Wordly daily game board and keyboard", caption: "Daily game" },
-      { src: IMAGES.wordlyResult, alt: "Completed Wordly result screen", caption: "Completed result" },
-      { src: IMAGES.wordlyStats, alt: "Wordly command line statistics", caption: "Player statistics" },
+      {
+        src: IMAGES.wordlyHome,
+        alt: "Wordly home menu in a terminal",
+        caption: "Home menu",
+      },
+      {
+        src: IMAGES.wordlyGameplay,
+        alt: "Wordly daily game board and keyboard",
+        caption: "Daily game",
+      },
+      {
+        src: IMAGES.wordlyResult,
+        alt: "Completed Wordly result screen",
+        caption: "Completed result",
+      },
+      {
+        src: IMAGES.wordlyStats,
+        alt: "Wordly command line statistics",
+        caption: "Player statistics",
+      },
     ],
     overview: [
       "Wordly brings a daily five letter word puzzle into the terminal without reducing it to a plain stream of prompts. It has a responsive terminal interface, keyboard feedback, statistics, saved games, and spoiler free result sharing. A single daily board is selected by UTC date, making the challenge consistent for players in different time zones.",
@@ -90,7 +124,8 @@ export const PROJECTS: Project[] = [
   {
     slug: "purrpeek",
     name: "Purrpeek",
-    tagline: "System information from a cat's perspective, across every major platform. Purr approved.",
+    tagline:
+      "System information from a cat's perspective, across every major platform. Purr approved.",
     githubUrl: "https://github.com/nikhil25803/purrpeek",
     image: purrpeekImage,
     imageAlt: "Purrpeek rendering system information in a terminal",
@@ -119,10 +154,26 @@ export const PROJECTS: Project[] = [
       },
     ],
     gallery: [
-      { src: IMAGES.purrpeekGhosttyMongo, alt: "Purrpeek system report in Ghostty with Mongo artwork", caption: "Ghostty with image rendering" },
-      { src: IMAGES.purrpeekGhosttySnow, alt: "Purrpeek system report in Ghostty with Snow artwork", caption: "A second bundled artwork" },
-      { src: IMAGES.purrpeekTerminalMongo, alt: "Purrpeek Braille report in macOS Terminal", caption: "Braille fallback in macOS Terminal" },
-      { src: IMAGES.purrpeekTerminalSnow, alt: "Purrpeek Braille report with Snow artwork", caption: "Fallback output with another image" },
+      {
+        src: IMAGES.purrpeekGhosttyMongo,
+        alt: "Purrpeek system report in Ghostty with Mongo artwork",
+        caption: "Ghostty with image rendering",
+      },
+      {
+        src: IMAGES.purrpeekGhosttySnow,
+        alt: "Purrpeek system report in Ghostty with Snow artwork",
+        caption: "A second bundled artwork",
+      },
+      {
+        src: IMAGES.purrpeekTerminalMongo,
+        alt: "Purrpeek Braille report in macOS Terminal",
+        caption: "Braille fallback in macOS Terminal",
+      },
+      {
+        src: IMAGES.purrpeekTerminalSnow,
+        alt: "Purrpeek Braille report with Snow artwork",
+        caption: "Fallback output with another image",
+      },
     ],
     overview: [
       "Purrpeek is a system information CLI with a playful presentation. It collects operating system, hardware, storage, network, battery, shell, and terminal information, then pairs the report with cat artwork. The project supports macOS, Linux, and Windows and uses a best effort approach. One unavailable metric does not prevent the rest of the report from rendering.",
@@ -141,11 +192,19 @@ export const PROJECTS: Project[] = [
   {
     slug: "review-it",
     name: "Review It",
-    tagline: "An open platform for receiving focused résumé feedback from a chosen mentor.",
+    tagline:
+      "An open platform for receiving focused résumé feedback from a chosen mentor.",
     githubUrl: "https://github.com/nikhil25803/ReviewIt",
     image: IMAGES.projectReviewIt,
     imageAlt: "Review It résumé feedback platform",
-    tech: ["Python", "Django REST Framework", "React", "PostgreSQL", "Firebase", "AWS S3"],
+    tech: [
+      "Python",
+      "Django REST Framework",
+      "React",
+      "PostgreSQL",
+      "Firebase",
+      "AWS S3",
+    ],
     overview: [
       "Review It connects job seekers with mentors who can review a résumé in context. Instead of treating feedback as an anonymous score, the platform centers the relationship between a person preparing for a role and someone with relevant experience. Users can submit a résumé, choose a mentor, and receive practical guidance through a free and open source workflow.",
       "The project covers both sides of a modern web application: identity and file handling at the boundary, structured API behavior in the backend, and a focused review experience in the frontend. It was built to be useful to people entering the job market as well as professionals repositioning their experience for a career change.",
@@ -163,7 +222,8 @@ export const PROJECTS: Project[] = [
   {
     slug: "nutri-vista",
     name: "Nutri Vista",
-    tagline: "Nutrition analysis that turns everyday meal notes into trackable insights.",
+    tagline:
+      "Nutrition analysis that turns everyday meal notes into trackable insights.",
     githubUrl: "https://github.com/nikhil25803/nutri-vista",
     image: IMAGES.projectNutriVista,
     imageAlt: "Nutri Vista nutrition dashboard",
@@ -185,17 +245,25 @@ export const PROJECTS: Project[] = [
   {
     slug: "blogging-platform",
     name: "Microservice Blogging API",
-    tagline: "A blogging backend built around services, with search, recommendations, caching, and tests.",
+    tagline:
+      "A blogging backend built around services, with search, recommendations, caching, and tests.",
     githubUrl: "https://github.com/nikhil25803/blogging-platform",
     image: IMAGES.prjectBloggingPlatform,
     imageAlt: "Microservice Blogging API preview",
     tech: ["Node.js", "Express", "PostgreSQL", "Redis", "Prisma", "Docker"],
     commands: [
       { label: "Run with Docker", code: "docker-compose up" },
-      { label: "Run manually", code: "npm i\nnpx prisma migrate dev --name init\nnpm run test\nnpm run dev" },
+      {
+        label: "Run manually",
+        code: "npm i\nnpx prisma migrate dev --name init\nnpm run test\nnpm run dev",
+      },
     ],
     gallery: [
-      { src: IMAGES.bloggingArchitecture, alt: "Blogging platform microservice architecture", caption: "API, PostgreSQL, and Redis service architecture" },
+      {
+        src: IMAGES.bloggingArchitecture,
+        alt: "Blogging platform microservice architecture",
+        caption: "API, PostgreSQL, and Redis service architecture",
+      },
     ],
     overview: [
       "The Microservice Blogging API explores how a familiar content product changes when responsibilities are split across services. It covers account and content workflows, CRUD operations, authentication, keyword search, and recommendations while keeping performance and operational behavior visible.",
@@ -236,14 +304,13 @@ export const PROJECTS: Project[] = [
   {
     slug: "jobs-api",
     name: "Jobs API",
-    tagline: "A backend for job listings, applications, recruiters, and candidate selection.",
+    tagline:
+      "A backend for job listings, applications, recruiters, and candidate selection.",
     githubUrl: "https://github.com/nikhil25803/jobs-api",
     image: IMAGES.projectJobsapi,
     imageAlt: "Jobs API project preview",
     tech: ["Node.js", "Express", "MongoDB", "JWT", "AWS S3", "SendGrid"],
-    commands: [
-      { label: "Install and start", code: "npm i\nnpm start" },
-    ],
+    commands: [{ label: "Install and start", code: "npm i\nnpm start" }],
     overview: [
       "Jobs API implements the backend workflows behind a hiring platform. Candidates can browse jobs and apply, while recruiters can publish positions, inspect applicants, and select candidates. The project goes beyond isolated CRUD endpoints by modeling the relationships between roles, listings, applications, uploaded material, and recruitment decisions.",
       "The API is intended to be consumed by a separate client, so consistent authentication, authorization, validation, and response shapes are central to the design. Population of related records gives recruiters useful application context without requiring the client to manually assemble every relationship.",
@@ -261,7 +328,8 @@ export const PROJECTS: Project[] = [
   {
     slug: "fund-raisers",
     name: "Fund Raisers",
-    tagline: "An open fundraising platform for projects, communities, and startup ideas.",
+    tagline:
+      "An open fundraising platform for projects, communities, and startup ideas.",
     githubUrl: "https://github.com/nikhil25803/fundRaiser",
     image: IMAGES.projectFundsraiser,
     imageAlt: "Fund Raisers crowdfunding platform",
@@ -273,9 +341,21 @@ export const PROJECTS: Project[] = [
       },
     ],
     gallery: [
-      { src: IMAGES.fundRaisersHome, alt: "Fund Raisers landing illustration", caption: "Fundraising landing experience" },
-      { src: IMAGES.fundRaisersFeatures, alt: "Fund Raisers feature overview", caption: "Platform features" },
-      { src: IMAGES.fundRaisersCampaign, alt: "Fund Raisers campaign interface", caption: "Campaign discovery" },
+      {
+        src: IMAGES.fundRaisersHome,
+        alt: "Fund Raisers landing illustration",
+        caption: "Fundraising landing experience",
+      },
+      {
+        src: IMAGES.fundRaisersFeatures,
+        alt: "Fund Raisers feature overview",
+        caption: "Platform features",
+      },
+      {
+        src: IMAGES.fundRaisersCampaign,
+        alt: "Fund Raisers campaign interface",
+        caption: "Campaign discovery",
+      },
     ],
     overview: [
       "Fund Raisers is a crowdfunding application where people can present a project, community need, or startup idea and ask others to support it. Visitors can discover active campaigns, understand why funds are needed, and contribute through an integrated payment flow. Campaign owners can publish their own requests instead of relying on a centrally curated catalog.",
@@ -294,7 +374,8 @@ export const PROJECTS: Project[] = [
   {
     slug: "scrape-up",
     name: "Scrape Up",
-    tagline: "A Python package for extracting useful public data when a formal API is unavailable.",
+    tagline:
+      "A Python package for extracting useful public data when a formal API is unavailable.",
     githubUrl: "https://github.com/nikhil25803/scrape-up",
     image: IMAGES.projectScrapeup,
     imageAlt: "Scrape Up Python package preview",
@@ -319,7 +400,8 @@ export const PROJECTS: Project[] = [
   {
     slug: "food-vision",
     name: "Food Vision",
-    tagline: "A multiclass food image classifier with command line and desktop interfaces.",
+    tagline:
+      "A multiclass food image classifier with command line and desktop interfaces.",
     githubUrl: "https://github.com/nikhil25803/FoodVision",
     image: IMAGES.projectFoodvision,
     imageAlt: "Food Vision classifier preview",
@@ -335,10 +417,26 @@ export const PROJECTS: Project[] = [
       },
     ],
     gallery: [
-      { src: IMAGES.foodVisionAccuracy, alt: "Food Vision model accuracy chart", caption: "Training and validation accuracy" },
-      { src: IMAGES.foodVisionLoss, alt: "Food Vision model loss chart", caption: "Training and validation loss" },
-      { src: IMAGES.foodVisionCli, alt: "Food Vision command line prediction result", caption: "Command line prediction" },
-      { src: IMAGES.foodVisionGui, alt: "Food Vision desktop prediction interface", caption: "Desktop interface" },
+      {
+        src: IMAGES.foodVisionAccuracy,
+        alt: "Food Vision model accuracy chart",
+        caption: "Training and validation accuracy",
+      },
+      {
+        src: IMAGES.foodVisionLoss,
+        alt: "Food Vision model loss chart",
+        caption: "Training and validation loss",
+      },
+      {
+        src: IMAGES.foodVisionCli,
+        alt: "Food Vision command line prediction result",
+        caption: "Command line prediction",
+      },
+      {
+        src: IMAGES.foodVisionGui,
+        alt: "Food Vision desktop prediction interface",
+        caption: "Desktop interface",
+      },
     ],
     overview: [
       "Food Vision explores multiclass image classification in the concrete domain of food recognition. A convolutional neural network learns visual features from labeled examples and predicts the category of an unseen food image. The repository treats the model as part of a usable application rather than stopping at a training notebook.",
@@ -357,7 +455,8 @@ export const PROJECTS: Project[] = [
   {
     slug: "count-reps",
     name: "Count Reps",
-    tagline: "A customizable computer vision exercise counter with local progress tracking.",
+    tagline:
+      "A customizable computer vision exercise counter with local progress tracking.",
     githubUrl: "https://github.com/nikhil25803/count-reps",
     image: IMAGES.projectCountreps,
     imageAlt: "Count Reps exercise tracking application",
@@ -369,8 +468,16 @@ export const PROJECTS: Project[] = [
       },
     ],
     gallery: [
-      { src: IMAGES.countRepsDemo, alt: "Count Reps camera view tracking an exercise", caption: "Live pose tracking and repetition count" },
-      { src: IMAGES.countRepsLandmarks, alt: "MediaPipe body landmark reference", caption: "The landmarks used to define an exercise" },
+      {
+        src: IMAGES.countRepsDemo,
+        alt: "Count Reps camera view tracking an exercise",
+        caption: "Live pose tracking and repetition count",
+      },
+      {
+        src: IMAGES.countRepsLandmarks,
+        alt: "MediaPipe body landmark reference",
+        caption: "The landmarks used to define an exercise",
+      },
     ],
     overview: [
       "Count Reps uses pose estimation to count exercise repetitions from a camera feed. It is designed to support movements such as sit ups, push ups, and dumbbell presses while allowing the counting logic to be adapted for other exercises. A local database stores session information so the tool can track progress instead of losing the count when the camera closes.",

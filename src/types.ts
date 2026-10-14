@@ -6,7 +6,7 @@ export interface ProfileImage {
 export interface ExperienceEntry {
   id: string;
   company: string;
-  companyMark: string;
+  companyLogo: string;
   role: string;
   dates: string;
   location: string;

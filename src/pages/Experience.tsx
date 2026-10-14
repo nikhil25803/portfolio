@@ -12,12 +12,21 @@ const Experience = () => {
     <main className="site-container">
       <header className="page-heading">
         <p>career</p>
-        <h1><span>$</span>experience</h1>
-        <p>Backend and distributed systems work across mobility, healthtech, analytics, and developer education.</p>
+        <h1>
+          <span>$</span>experience
+        </h1>
+        <p>
+          Backend and distributed systems work across mobility, healthtech,
+          analytics, and developer education.
+        </p>
       </header>
       <section aria-label="Work experience" className="mt-10">
         {EXPERIENCES.map((experience) => (
-          <ExperienceCard key={experience.id} experience={experience} detailed />
+          <ExperienceCard
+            key={experience.id}
+            experience={experience}
+            detailed
+          />
         ))}
       </section>
     </main>

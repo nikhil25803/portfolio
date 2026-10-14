@@ -16,7 +16,10 @@ const application = (
   </React.StrictMode>
 );
 
-if (root.hasChildNodes() && PRERENDER_ROUTES.includes(window.location.pathname)) {
+if (
+  root.hasChildNodes() &&
+  PRERENDER_ROUTES.includes(window.location.pathname)
+) {
   ReactDOM.hydrateRoot(root, application);
 } else {
   root.replaceChildren();

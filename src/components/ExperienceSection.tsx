@@ -5,7 +5,9 @@ import ExperienceCard from "./cards/ExperienceCard";
 const ExperienceSection = () => (
   <section aria-labelledby="experience-heading">
     <div className="section-heading">
-      <h2 id="experience-heading"><span>$</span>experience</h2>
+      <h2 id="experience-heading">
+        <span>$</span>experience
+      </h2>
       <Link to="/experience">view all →</Link>
     </div>
     <div className="mt-6">

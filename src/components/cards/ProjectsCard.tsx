@@ -13,7 +13,10 @@ const ProjectsCard = ({ project }: { project: Project }) => (
     />
     <div className="min-w-0 flex-1">
       <div className="flex items-start justify-between gap-3">
-        <Link to={`/projects/${project.slug}`} className="font-medium text-textWhite no-underline group-hover:text-textPrimary">
+        <Link
+          to={`/projects/${project.slug}`}
+          className="font-medium text-textWhite no-underline group-hover:text-textPrimary"
+        >
           {project.name}
         </Link>
         <a
@@ -26,8 +29,13 @@ const ProjectsCard = ({ project }: { project: Project }) => (
           <FaGithub />
         </a>
       </div>
-      <p className="mt-1 text-sm leading-6 text-detailText">{project.tagline}</p>
-      <Link to={`/projects/${project.slug}`} className="mt-2 inline-block text-xs">
+      <p className="mt-1 text-sm leading-6 text-detailText">
+        {project.tagline}
+      </p>
+      <Link
+        to={`/projects/${project.slug}`}
+        className="mt-2 inline-block text-xs"
+      >
         read project details →
       </Link>
     </div>

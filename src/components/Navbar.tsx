@@ -1,13 +1,23 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
-import profileImage from "../assets/profile.png";
+import profileImage from "../assets/profile/profile_.png";
+import profileImage1 from "../assets/profile/profile_1.png";
+import profileImage2 from "../assets/profile/profile_2.png";
+import profileImage3 from "../assets/profile/profile_3.png";
+import profileImage4 from "../assets/profile/profile_4.png";
 import type { ProfileImage } from "../types";
-import { pickNextImageIndex } from "../utils/profile-image";
+import {
+  pickNextImageIndex,
+  pickRandomImageIndex,
+} from "../utils/profile-image";
 
 const profileImages: ProfileImage[] = [
-  { src: profileImage, alt: "Nikhil Raj" },
-  // Add more square local images here to enable click-to-shuffle.
+  { src: profileImage, alt: "Portrait of Nikhil Raj, software engineer" },
+  { src: profileImage1, alt: "Portrait of Nikhil Raj, software engineer" },
+  { src: profileImage2, alt: "Portrait of Nikhil Raj, software engineer" },
+  { src: profileImage3, alt: "Portrait of Nikhil Raj, software engineer" },
+  { src: profileImage4, alt: "Portrait of Nikhil Raj, software engineer" },
 ];
 
 const Navbar = () => {
@@ -18,6 +28,10 @@ const Navbar = () => {
   const canShuffle = profileImages.length > 1;
 
   useEffect(() => setMenuOpen(false), [location.pathname]);
+
+  useEffect(() => {
+    setImageIndex(pickRandomImageIndex(profileImages.length));
+  }, []);
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -67,7 +81,9 @@ const Navbar = () => {
           portrait
         )}
         <Link to="/" className="no-underline">
-          <span className="block text-lg font-medium text-textWhite">Nikhil Raj</span>
+          <span className="block text-lg font-medium text-textWhite">
+            Nikhil Raj
+          </span>
           <span className="block text-sm text-textGray">engineer.</span>
         </Link>
       </div>
@@ -81,7 +97,11 @@ const Navbar = () => {
           onClick={() => setMenuOpen((open) => !open)}
           className="rounded-md border border-textGray/40 p-2 text-xl text-textWhite transition hover:border-textPrimary hover:text-textPrimary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-textPrimary"
         >
-          {menuOpen ? <FiX aria-hidden="true" /> : <FiMenu aria-hidden="true" />}
+          {menuOpen ? (
+            <FiX aria-hidden="true" />
+          ) : (
+            <FiMenu aria-hidden="true" />
+          )}
         </button>
         {menuOpen && (
           <nav
@@ -89,18 +109,20 @@ const Navbar = () => {
             aria-label="Primary navigation"
             className="absolute right-0 z-20 mt-2 min-w-40 rounded-md border border-textGray/30 bg-backfroundColor p-2 shadow-2xl"
           >
-            {[["Home", "/"], ["Experience", "/experience"], ["Projects", "/projects"]].map(
-              ([label, path]) => (
-                <Link
-                  key={path}
-                  to={path}
-                  className="block rounded px-3 py-2 text-sm text-textWhite no-underline transition hover:bg-textPrimary/15 hover:text-textPrimary"
-                >
-                  <span className="mr-2 text-textPrimary">/</span>
-                  {label.toLowerCase()}
-                </Link>
-              ),
-            )}
+            {[
+              ["Home", "/"],
+              ["Experience", "/experience"],
+              ["Projects", "/projects"],
+            ].map(([label, path]) => (
+              <Link
+                key={path}
+                to={path}
+                className="block rounded px-3 py-2 text-sm text-textWhite no-underline transition hover:bg-textPrimary/15 hover:text-textPrimary"
+              >
+                <span className="mr-2 text-textPrimary">/</span>
+                {label.toLowerCase()}
+              </Link>
+            ))}
           </nav>
         )}
       </div>

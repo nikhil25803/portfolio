@@ -27,7 +27,10 @@ function renderHead(seo) {
   const description = escapeHtml(seo.description);
   const canonical = escapeHtml(seo.canonical);
   const image = escapeHtml(seo.image);
-  const structuredData = JSON.stringify(seo.structuredData).replaceAll("<", "\\u003c");
+  const structuredData = JSON.stringify(seo.structuredData).replaceAll(
+    "<",
+    "\\u003c",
+  );
 
   return [
     `<meta name="description" content="${description}" />`,
@@ -51,9 +54,10 @@ for (const route of PRERENDER_ROUTES) {
     .replace(/<title>.*?<\/title>/s, `<title>${escapeHtml(seo.title)}</title>`)
     .replace("<!--route-head-->", renderHead(seo))
     .replace('<div id="root"></div>', `<div id="root">${html}</div>`);
-  const outputFile = route === "/"
-    ? resolve(outputDirectory, "index.html")
-    : resolve(outputDirectory, `.${route}.html`);
+  const outputFile =
+    route === "/"
+      ? resolve(outputDirectory, "index.html")
+      : resolve(outputDirectory, `.${route}.html`);
   await mkdir(dirname(outputFile), { recursive: true });
   await writeFile(outputFile, document);
 }
@@ -62,7 +66,8 @@ const sitemap = [
   '<?xml version="1.0" encoding="UTF-8"?>',
   '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
   ...PRERENDER_ROUTES.map(
-    (route) => `  <url><loc>${new URL(route, "https://nikhilraj.vercel.app").href}</loc></url>`,
+    (route) =>
+      `  <url><loc>${new URL(route, "https://nikhilraj.vercel.app").href}</loc></url>`,
   ),
   "</urlset>",
   "",

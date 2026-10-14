@@ -31,7 +31,10 @@ const Quote = () => {
     if (!shouldAnimate(interactionPaused, reducedMotion, state.phase)) return;
 
     const timeout = window.setTimeout(
-      () => setState((current) => advanceTypewriter(current, quote.quote.length, quotes.length)),
+      () =>
+        setState((current) =>
+          advanceTypewriter(current, quote.quote.length, quotes.length),
+        ),
       getTypewriterDelay(state.phase),
     );
     return () => window.clearTimeout(timeout);
@@ -56,11 +59,19 @@ const Quote = () => {
       onMouseLeave={() => setInteractionPaused(false)}
       onFocusCapture={() => setInteractionPaused(true)}
       onBlurCapture={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget)) setInteractionPaused(false);
+        if (!event.currentTarget.contains(event.relatedTarget))
+          setInteractionPaused(false);
       }}
     >
-      <blockquote className="quote-copy justify-center text-center text-lg text-textWhite" aria-hidden="true">
-        “{visibleQuote}<span className="typewriter-cursor" aria-hidden="true">|</span>”
+      <blockquote
+        className="quote-copy justify-center text-center text-lg text-textWhite"
+        aria-hidden="true"
+      >
+        “{visibleQuote}
+        <span className="typewriter-cursor" aria-hidden="true">
+          |
+        </span>
+        ”
       </blockquote>
       <p className="sr-only">“{quote.quote}”</p>
       <figcaption className="mt-2 text-center text-sm text-textGray">

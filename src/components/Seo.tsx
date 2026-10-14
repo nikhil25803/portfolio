@@ -35,6 +35,12 @@ const Seo = () => {
     setMeta('meta[property="og:url"]', "property", "og:url", seo.canonical);
     setMeta('meta[property="og:image"]', "property", "og:image", seo.image);
     setMeta(
+      'meta[property="og:image:alt"]',
+      "property",
+      "og:image:alt",
+      seo.title,
+    );
+    setMeta(
       'meta[name="twitter:card"]',
       "name",
       "twitter:card",
@@ -48,6 +54,12 @@ const Seo = () => {
       seo.description,
     );
     setMeta('meta[name="twitter:image"]', "name", "twitter:image", seo.image);
+    setMeta(
+      'meta[name="twitter:image:alt"]',
+      "name",
+      "twitter:image:alt",
+      seo.title,
+    );
 
     let canonical = document.head.querySelector<HTMLLinkElement>(
       'link[rel="canonical"]',

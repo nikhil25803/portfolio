@@ -1,4 +1,5 @@
 import profileImage from "./assets/profile/profile_4.png";
+import socialCard from "./assets/social-card.png";
 import { getProject, PROJECTS } from "./data/project-data";
 
 export const SITE_ORIGIN = "https://nikhilraj.space";
@@ -43,7 +44,7 @@ function baseSeo(
   title: string,
   description: string,
   type: SeoData["type"] = "website",
-  image = profileImage,
+  image = socialCard,
 ): Omit<SeoData, "structuredData"> {
   return {
     title,

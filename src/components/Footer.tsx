@@ -1,55 +1,76 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaKaggle, FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
+import { SiGeeksforgeeks, SiLeetcode } from "react-icons/si";
 
-const Footer = () => {
-  return (
-    <footer className="bg-backfroundColor w-full font-dmMono">
-      <div className="max-w-[1280px] mx-auto text-textWhite px-5 py-10 border-0 border-solid border-t-2 ">
-        <div className="flex flex-row justify-between items-center">
-          <div className="flex flex-col ">
-            <div className="text-lg lg:text-xl mr-2">Nikhil Raj</div>
+const socialLinks = [
+  { href: "mailto:nikhil25803@gmail.com", label: "Email", icon: <MdEmail /> },
+  {
+    href: "https://github.com/nikhil25803",
+    label: "GitHub",
+    icon: <FaGithub />,
+  },
+  {
+    href: "https://www.linkedin.com/in/nikhil25803/",
+    label: "LinkedIn",
+    icon: <FaLinkedin />,
+  },
+  {
+    href: "https://twitter.com/humans_write",
+    label: "X",
+    icon: <FaSquareXTwitter />,
+  },
+  {
+    href: "https://leetcode.com/nikhil25803/",
+    label: "LeetCode",
+    icon: <SiLeetcode aria-hidden="true" focusable="false" />,
+  },
+  {
+    href: "https://www.kaggle.com/nikhil25803",
+    label: "Kaggle",
+    icon: <FaKaggle />,
+  },
+  {
+    href: "https://auth.geeksforgeeks.org/user/nikhil25803",
+    label: "GeeksforGeeks",
+    icon: <SiGeeksforgeeks aria-hidden="true" focusable="false" />,
+  },
+];
+
+const Footer = () => (
+  <footer className="site-container mt-16 border-t border-textGray/25 py-10">
+    <div className="flex flex-col gap-7 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <p className="text-base text-textWhite">Nikhil Raj</p>
+        <p className="mt-1 text-xs text-textGray">Backend engineer</p>
+        <a
+          href="mailto:nikhil25803@gmail.com"
+          className="mt-2 inline-block text-xs"
+        >
+          nikhil25803@gmail.com
+        </a>
+      </div>
+      <div>
+        <p className="mb-2 text-xs text-textGray sm:text-right">
+          find me elsewhere
+        </p>
+        <div className="flex flex-wrap gap-x-4 gap-y-3 text-lg">
+          {socialLinks.map((link) => (
             <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=nikhil25803@google.com"
-              style={{ textDecoration: "None" }}
-              target="_blank"
-              className="text-base lg:text-lg text-textGray"
+              key={link.label}
+              href={link.href}
+              target={link.href.startsWith("http") ? "_blank" : undefined}
+              rel={link.href.startsWith("http") ? "noreferrer" : undefined}
+              aria-label={link.label}
+              title={link.label}
             >
-              nikhil25803@gmail.com
+              {link.icon}
             </a>
-          </div>
-          <div className=" text-xl lg:text-2xl flex flex-row gap-5">
-            <a
-              href="https://github.com/nikhil25803"
-              style={{ textDecoration: "None" }}
-              className="text-textWhite"
-              target="_blank"
-            >
-              <FaGithub className="hover-border w-fit p-2" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/nikhil25803/"
-              style={{ textDecoration: "None" }}
-              className="text-textWhite"
-              target="_blank"
-            >
-              <FaLinkedin className="hover-border w-fit p-2" />
-            </a>
-            <a
-              href="https://twitter.com/humans_write"
-              style={{ textDecoration: "None" }}
-              className="text-textWhite"
-              target="_blank"
-            >
-              <FaSquareXTwitter className="hover-border w-fit p-2" />
-            </a>
-          </div>
-        </div>
-        <div className="text-center mt-10 text-textGray">
-          © Copyright 2024. Made by Nikhil Raj
+          ))}
         </div>
       </div>
-    </footer>
-  );
-};
+    </div>
+  </footer>
+);
 
 export default Footer;

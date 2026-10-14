@@ -40,10 +40,12 @@ function renderHead(seo) {
     `<meta property="og:type" content="${seo.type}" />`,
     `<meta property="og:url" content="${canonical}" />`,
     `<meta property="og:image" content="${image}" />`,
+    `<meta property="og:image:alt" content="${title}" />`,
     '<meta name="twitter:card" content="summary_large_image" />',
     `<meta name="twitter:title" content="${title}" />`,
     `<meta name="twitter:description" content="${description}" />`,
     `<meta name="twitter:image" content="${image}" />`,
+    `<meta name="twitter:image:alt" content="${title}" />`,
     `<script id="route-structured-data" type="application/ld+json">${structuredData}</script>`,
   ].join("\n    ");
 }

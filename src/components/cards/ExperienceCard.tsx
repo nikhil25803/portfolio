@@ -1,36 +1,44 @@
-interface ExperienceCardDetails {
-  position: string;
-  companyName: string;
-  fromDate: string;
-  toDate: string;
-  points: string[];
-  skillsUsed: string;
+import type { ExperienceEntry } from "../../types";
+
+interface ExperienceCardProps {
+  experience: ExperienceEntry;
+  detailed?: boolean;
 }
 
-const ExperienceCard = (props: ExperienceCardDetails) => {
-  return (
-    <div className="flex flex-col gap-5 border-0 border-solid border-l-2 border-textGray px-4 py-4 rounded-lg hover:shadow-2xl">
-      <div className="text-xl md:text-2xl lg:text-3xl  text-textPrimary">
-        {props.position}
-      </div>
-      <div className="text-lg md:text-xl lg:text-2xl">
-        {props.companyName} | {props.fromDate} - {props.toDate}
-      </div>
-      <div className="space-y-2 text-base md:text-lg">
-        {props.points.map((point) => {
-          return (
-            <p key={point}>
-              <span className="text-textPrimary">{"> "}</span>
-              {point}
-            </p>
-          );
-        })}
-      </div>
-      <div className="text-textPrimary text-base md:text-lg">
-        Skills: {props.skillsUsed}
-      </div>
+const ExperienceCard = ({ experience, detailed = false }: ExperienceCardProps) => (
+  <article className="flex gap-4 border-b border-textGray/20 py-6 first:pt-0 last:border-0 last:pb-0">
+    <div
+      aria-hidden="true"
+      className="flex h-16 w-16 shrink-0 items-center justify-center rounded-md border border-textGray/30 bg-textWhite/5 text-xl font-medium text-textPrimary"
+    >
+      {experience.companyMark}
     </div>
-  );
-};
+    <div className="min-w-0 flex-1">
+      <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+        <div>
+          <h3 className="text-base font-medium text-textWhite">{experience.company}</h3>
+          <p className="text-sm text-textPrimary">{experience.role}</p>
+        </div>
+        <p className="shrink-0 text-xs text-textGray sm:text-right">{experience.dates}</p>
+      </div>
+      <p className="mt-3 text-sm leading-6 text-textGray">{experience.summary}</p>
+      {detailed && (
+        <>
+          <ul className="mt-4 space-y-2 text-sm leading-6 text-textGray">
+            {experience.highlights.map((highlight) => (
+              <li key={highlight} className="flex gap-2">
+                <span className="text-textPrimary">›</span><span>{highlight}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-4 flex flex-wrap gap-x-3 gap-y-1 text-xs text-textGray">
+            {experience.skills.map((skill) => <span key={skill}>#{skill}</span>)}
+          </div>
+          <p className="mt-3 text-xs text-textGray/70">{experience.location}</p>
+        </>
+      )}
+    </div>
+  </article>
+);
 
 export default ExperienceCard;

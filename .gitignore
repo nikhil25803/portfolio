@@ -17,6 +17,7 @@ dist-ssr
 !.vscode/extensions.json
 .idea
 .DS_Store
+design/design-system.md
 *.suo
 *.ntvs*
 *.njsproj

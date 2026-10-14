@@ -1,60 +1,35 @@
-interface ProjectInfo {
-  imageurl: string;
-  projectname: string;
-  link: {
-    name: string;
-    url: string;
-  }[];
-  projectdetails: string;
-  skillsUsed: string[];
-}
+import { FaGithub } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import type { Project } from "../../types";
 
-const ProjectsCard = (props: ProjectInfo) => {
-  return (
-    <div className=" rounded-lg overflow-hidden hover:shadow-2xl flex flex-col ">
-      <img
-        className="hidden md:block w-full h-[350px] md:h-[250px] lg:h-[375px] overflow-hidden"
-        src={props.imageurl}
-        alt={props.projectname}
-      />
-      <div className="px-1 py-4 mt-0">
-        <div className="flex flex-row items-center justify-between">
-          <div className="hover-border w-fit text-textPrimary text-2xl mb-2">
-            {props.projectname}
-          </div>
-          <div>
-            {props.link.map((_proj, index) => {
-              return (
-                <a
-                  key={index}
-                  href={_proj.url}
-                  target="_blank"
-                  style={{ textDecoration: "None" }}
-                  className="hover-border mr-2 text-textWhite"
-                >
-                  {_proj.name}
-                </a>
-              );
-            })}
-          </div>
-        </div>
-        <p className="text-base md:text-lg">{props.projectdetails}</p>
+const ProjectsCard = ({ project }: { project: Project }) => (
+  <article className="group flex gap-4 border-b border-textGray/20 py-5 first:pt-0 last:border-0 last:pb-0">
+    <img
+      src={project.image}
+      alt=""
+      className="h-16 w-16 shrink-0 rounded-md border border-textGray/20 object-cover"
+    />
+    <div className="min-w-0 flex-1">
+      <div className="flex items-start justify-between gap-3">
+        <Link to={`/projects/${project.slug}`} className="font-medium text-textWhite no-underline group-hover:text-textPrimary">
+          {project.name}
+        </Link>
+        <a
+          href={project.githubUrl}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`${project.name} on GitHub`}
+          className="shrink-0 text-textGray hover:text-textPrimary"
+        >
+          <FaGithub />
+        </a>
       </div>
-      <div className="px-1 py-4 gap-2">
-        {props.skillsUsed.map((skills, index) => {
-          return (
-            <span
-              key={index}
-              className="hover-border inline-block py-1 text-base md:text-lg  shadow-2xl ml-1 mr-1"
-            >
-              <span className="text-textPrimary mr-1">#</span>
-              {skills}
-            </span>
-          );
-        })}
-      </div>
+      <p className="mt-1 text-sm leading-6 text-textGray">{project.tagline}</p>
+      <Link to={`/projects/${project.slug}`} className="mt-2 inline-block text-xs">
+        read case study →
+      </Link>
     </div>
-  );
-};
+  </article>
+);
 
 export default ProjectsCard;

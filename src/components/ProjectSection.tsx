@@ -1,40 +1,17 @@
-import { PROJECTDATA } from "../data/project-data";
+import { Link } from "react-router-dom";
+import { FEATURED_PROJECTS } from "../data/project-data";
 import ProjectsCard from "./cards/ProjectsCard";
 
-const ProjectSection = () => {
-  const projectData = PROJECTDATA.slice(0, 2);
-  return (
-    <section className="bg-backfroundColor w-full font-dmMono">
-      <div className="max-w-[1280px] mx-auto text-textWhite p-5 ">
-        <div className="flex flex-row justify-between items-center">
-          <div className="text-2xl md:text-3xl lg:text-4xl ">
-            <span className="text-textPrimary mr-1">$</span>projects
-          </div>
-          <a
-            href="/projects"
-            style={{ textDecoration: "None" }}
-            className="hover-border text-textWhite"
-          >
-            View all ~~~{">"}
-          </a>
-        </div>
-        <div className="mt-5 grid grid-cols-1 md:grid-cols-2  gap-5">
-          {projectData.map((_pr, index) => {
-            return (
-              <ProjectsCard
-                key={index}
-                imageurl={_pr.imageurl}
-                projectname={_pr.projectname}
-                link={_pr.link}
-                projectdetails={_pr.projectdetails}
-                skillsUsed={_pr.skillsUsed}
-              />
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-};
+const ProjectSection = () => (
+  <section aria-labelledby="projects-heading">
+    <div className="section-heading">
+      <h2 id="projects-heading"><span>$</span>projects</h2>
+      <Link to="/projects">view all →</Link>
+    </div>
+    <div className="mt-6">
+      {FEATURED_PROJECTS.map((project) => <ProjectsCard key={project.slug} project={project} />)}
+    </div>
+  </section>
+);
 
 export default ProjectSection;

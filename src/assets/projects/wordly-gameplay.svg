@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="630" viewBox="0 0 1000 630" role="img" aria-labelledby="title description">
+  <title id="title">Responsive Wordly daily game</title>
+  <desc id="description">A large terminal layout with the Wordly board on the left, keyboard and guess distribution on the right, and the guess prompt at the bottom.</desc>
+  <style>
+    text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #f3f4f6 }
+    .green-text { fill: #5bcb76 }
+    .muted { fill: #94a3b8 }
+    .divider { stroke: #334155; stroke-width: 1 }
+    .empty { fill: #202833 }
+    .correct { fill: #5bcb76 }
+    .present { fill: #d7b93e }
+    .absent { fill: #4b5563 }
+    .tile-letter { font-size: 19px; font-weight: 700; text-anchor: middle; dominant-baseline: middle }
+    .key-letter { font-size: 13px; font-weight: 700; text-anchor: middle; dominant-baseline: middle }
+  </style>
+  <rect width="1000" height="630" rx="12" fill="#0b1118"/>
+  <circle cx="22" cy="20" r="6" fill="#ef4444"/>
+  <circle cx="42" cy="20" r="6" fill="#eab308"/>
+  <circle cx="62" cy="20" r="6" fill="#22c55e"/>
+
+  <text class="green-text" x="40" y="72" font-size="21" font-weight="700" letter-spacing="4">WORDLY</text>
+  <text class="muted" x="188" y="72" font-size="14">│  2026-10-06</text>
+  <text x="960" y="72" font-size="14" text-anchor="end">Streak 3  │  Wins 12  │  Win 92%</text>
+  <line class="divider" x1="40" y1="92" x2="960" y2="92"/>
+
+  <g transform="translate(128 125)">
+    <g>
+      <rect class="absent" width="54" height="42" rx="3"/><text class="tile-letter" x="27" y="22">H</text>
+      <rect class="correct" x="62" width="54" height="42" rx="3"/><text class="tile-letter" x="89" y="22">E</text>
+      <rect class="absent" x="124" width="54" height="42" rx="3"/><text class="tile-letter" x="151" y="22">L</text>
+      <rect class="absent" x="186" width="54" height="42" rx="3"/><text class="tile-letter" x="213" y="22">L</text>
+      <rect class="absent" x="248" width="54" height="42" rx="3"/><text class="tile-letter" x="275" y="22">O</text>
+    </g>
+    <g transform="translate(0 50)">
+      <rect class="absent" width="54" height="42" rx="3"/><text class="tile-letter" x="27" y="22">F</text>
+      <rect class="present" x="62" width="54" height="42" rx="3"/><text class="tile-letter" x="89" y="22">E</text>
+      <rect class="present" x="124" width="54" height="42" rx="3"/><text class="tile-letter" x="151" y="22">I</text>
+      <rect class="absent" x="186" width="54" height="42" rx="3"/><text class="tile-letter" x="213" y="22">G</text>
+      <rect class="absent" x="248" width="54" height="42" rx="3"/><text class="tile-letter" x="275" y="22">N</text>
+    </g>
+    <g transform="translate(0 100)">
+      <rect class="absent" width="54" height="42" rx="3"/><text class="tile-letter" x="27" y="22">C</text>
+      <rect class="absent" x="62" width="54" height="42" rx="3"/><text class="tile-letter" x="89" y="22">L</text>
+      <rect class="absent" x="124" width="54" height="42" rx="3"/><text class="tile-letter" x="151" y="22">O</text>
+      <rect class="absent" x="186" width="54" height="42" rx="3"/><text class="tile-letter" x="213" y="22">U</text>
+      <rect class="absent" x="248" width="54" height="42" rx="3"/><text class="tile-letter" x="275" y="22">D</text>
+    </g>
+    <g transform="translate(0 150)">
+      <rect class="correct" width="54" height="42" rx="3"/><text class="tile-letter" x="27" y="22">R</text>
+      <rect class="correct" x="62" width="54" height="42" rx="3"/><text class="tile-letter" x="89" y="22">I</text>
+      <rect class="absent" x="124" width="54" height="42" rx="3"/><text class="tile-letter" x="151" y="22">D</text>
+      <rect class="correct" x="186" width="54" height="42" rx="3"/><text class="tile-letter" x="213" y="22">E</text>
+      <rect class="correct" x="248" width="54" height="42" rx="3"/><text class="tile-letter" x="275" y="22">R</text>
+    </g>
+    <g transform="translate(0 200)">
+      <rect class="empty" width="54" height="42" rx="3"/><text class="tile-letter muted" x="27" y="22">·</text>
+      <rect class="empty" x="62" width="54" height="42" rx="3"/><text class="tile-letter muted" x="89" y="22">·</text>
+      <rect class="empty" x="124" width="54" height="42" rx="3"/><text class="tile-letter muted" x="151" y="22">·</text>
+      <rect class="empty" x="186" width="54" height="42" rx="3"/><text class="tile-letter muted" x="213" y="22">·</text>
+      <rect class="empty" x="248" width="54" height="42" rx="3"/><text class="tile-letter muted" x="275" y="22">·</text>
+    </g>
+    <g transform="translate(0 250)">
+      <rect class="empty" width="54" height="42" rx="3"/><text class="tile-letter muted" x="27" y="22">·</text>
+      <rect class="empty" x="62" width="54" height="42" rx="3"/><text class="tile-letter muted" x="89" y="22">·</text>
+      <rect class="empty" x="124" width="54" height="42" rx="3"/><text class="tile-letter muted" x="151" y="22">·</text>
+      <rect class="empty" x="186" width="54" height="42" rx="3"/><text class="tile-letter muted" x="213" y="22">·</text>
+      <rect class="empty" x="248" width="54" height="42" rx="3"/><text class="tile-letter muted" x="275" y="22">·</text>
+    </g>
+  </g>
+
+  <line class="divider" x1="476" y1="120" x2="476" y2="465"/>
+  <text x="515" y="137" font-size="14">Keyboard</text>
+  <g transform="translate(515 155)">
+    <g>
+      <rect class="empty" width="34" height="30" rx="3"/><text class="key-letter" x="17" y="16">Q</text>
+      <rect class="empty" x="39" width="34" height="30" rx="3"/><text class="key-letter" x="56" y="16">W</text>
+      <rect class="correct" x="78" width="34" height="30" rx="3"/><text class="key-letter" x="95" y="16">E</text>
+      <rect class="correct" x="117" width="34" height="30" rx="3"/><text class="key-letter" x="134" y="16">R</text>
+      <rect class="empty" x="156" width="34" height="30" rx="3"/><text class="key-letter" x="173" y="16">T</text>
+      <rect class="empty" x="195" width="34" height="30" rx="3"/><text class="key-letter" x="212" y="16">Y</text>
+      <rect class="absent" x="234" width="34" height="30" rx="3"/><text class="key-letter" x="251" y="16">U</text>
+      <rect class="correct" x="273" width="34" height="30" rx="3"/><text class="key-letter" x="290" y="16">I</text>
+      <rect class="absent" x="312" width="34" height="30" rx="3"/><text class="key-letter" x="329" y="16">O</text>
+      <rect class="empty" x="351" width="34" height="30" rx="3"/><text class="key-letter" x="368" y="16">P</text>
+    </g>
+    <g transform="translate(19 37)">
+      <rect class="empty" width="34" height="30" rx="3"/><text class="key-letter" x="17" y="16">A</text>
+      <rect class="empty" x="39" width="34" height="30" rx="3"/><text class="key-letter" x="56" y="16">S</text>
+      <rect class="absent" x="78" width="34" height="30" rx="3"/><text class="key-letter" x="95" y="16">D</text>
+      <rect class="absent" x="117" width="34" height="30" rx="3"/><text class="key-letter" x="134" y="16">F</text>
+      <rect class="absent" x="156" width="34" height="30" rx="3"/><text class="key-letter" x="173" y="16">G</text>
+      <rect class="absent" x="195" width="34" height="30" rx="3"/><text class="key-letter" x="212" y="16">H</text>
+      <rect class="empty" x="234" width="34" height="30" rx="3"/><text class="key-letter" x="251" y="16">J</text>
+      <rect class="empty" x="273" width="34" height="30" rx="3"/><text class="key-letter" x="290" y="16">K</text>
+      <rect class="absent" x="312" width="34" height="30" rx="3"/><text class="key-letter" x="329" y="16">L</text>
+    </g>
+    <g transform="translate(17 74)">
+      <rect class="empty" width="50" height="30" rx="3"/><text class="key-letter" x="25" y="16">⌫</text>
+      <rect class="empty" x="55" width="34" height="30" rx="3"/><text class="key-letter" x="72" y="16">Z</text>
+      <rect class="empty" x="94" width="34" height="30" rx="3"/><text class="key-letter" x="111" y="16">X</text>
+      <rect class="absent" x="133" width="34" height="30" rx="3"/><text class="key-letter" x="150" y="16">C</text>
+      <rect class="empty" x="172" width="34" height="30" rx="3"/><text class="key-letter" x="189" y="16">V</text>
+      <rect class="empty" x="211" width="34" height="30" rx="3"/><text class="key-letter" x="228" y="16">B</text>
+      <rect class="absent" x="250" width="34" height="30" rx="3"/><text class="key-letter" x="267" y="16">N</text>
+      <rect class="empty" x="289" width="34" height="30" rx="3"/><text class="key-letter" x="306" y="16">M</text>
+      <rect class="empty" x="328" width="50" height="30" rx="3"/><text class="key-letter" x="353" y="16">↵</text>
+    </g>
+  </g>
+
+  <line class="divider" x1="515" y1="286" x2="900" y2="286"/>
+  <text x="515" y="316" font-size="14">Guess distribution</text>
+  <g font-size="13">
+    <text class="muted" x="515" y="344">1                      0</text>
+    <text class="muted" x="515" y="367">2                      0</text>
+    <text class="muted" x="515" y="390">3                      0</text>
+    <text x="515" y="413">4  <tspan class="green-text">████████████</tspan> 5</text>
+    <text class="muted" x="515" y="436">5  █████                2</text>
+    <text class="muted" x="515" y="459">6  ██                   1</text>
+  </g>
+  <text class="muted" x="515" y="492" font-size="12">bold=correct  underline=present  dim=absent</text>
+
+  <text class="muted" x="40" y="570" font-size="13">esc menu  •  ctrl+c quit</text>
+  <text x="40" y="600" font-size="15"><tspan font-weight="700">› </tspan><tspan class="muted">Enter your guess…</tspan></text>
+</svg>

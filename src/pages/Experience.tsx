@@ -3,14 +3,18 @@ import ExperienceCard from "../components/cards/ExperienceCard";
 import { EXPERIENCES } from "../data/experience-data";
 
 const Experience = () => {
-  useEffect(() => { document.title = "Experience — Nikhil Raj"; }, []);
+  useEffect(() => {
+    document.title = "Experience | Nikhil Raj";
+    const id = window.location.hash.slice(1);
+    if (id) document.getElementById(id)?.scrollIntoView({ block: "start" });
+  }, []);
 
   return (
     <main className="site-container">
       <header className="page-heading">
         <p>career</p>
         <h1><span>$</span>experience</h1>
-        <p>Backend and distributed-systems work across mobility, healthtech, analytics, and developer education.</p>
+        <p>Backend and distributed systems work across mobility, healthtech, analytics, and developer education.</p>
       </header>
       <section aria-label="Work experience" className="mt-10">
         {EXPERIENCES.map((experience) => (

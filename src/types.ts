@@ -11,9 +11,24 @@ export interface ExperienceEntry {
   dates: string;
   location: string;
   summary: string;
-  highlights: string[];
+  highlights: ExperienceHighlight[];
   skills: string[];
   featured?: boolean;
+}
+
+export type ExperienceHighlight =
+  | string
+  | { leading: string; metric: string; trailing: string };
+
+export interface ProjectCommand {
+  label: string;
+  code: string;
+}
+
+export interface ProjectImage {
+  src: string;
+  alt: string;
+  caption: string;
 }
 
 export interface Project {
@@ -27,5 +42,7 @@ export interface Project {
   overview: string[];
   architecture: string[];
   usage: string[];
+  commands?: ProjectCommand[];
+  gallery?: ProjectImage[];
   featured?: boolean;
 }

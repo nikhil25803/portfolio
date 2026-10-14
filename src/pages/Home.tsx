@@ -6,7 +6,7 @@ import Quote from "../components/Quote";
 import SkillsMarquee from "../components/SkillsMarquee";
 
 const Home = () => {
-  useEffect(() => { document.title = "Nikhil Raj — Engineer"; }, []);
+  useEffect(() => { document.title = "Nikhil Raj | Engineer"; }, []);
 
   return (
     <main className="site-container space-y-14">

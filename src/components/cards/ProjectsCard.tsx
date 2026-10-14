@@ -24,7 +24,7 @@ const ProjectsCard = ({ project }: { project: Project }) => (
           <FaGithub />
         </a>
       </div>
-      <p className="mt-1 text-sm leading-6 text-textGray">{project.tagline}</p>
+      <p className="mt-1 text-sm leading-6 text-detailText">{project.tagline}</p>
       <Link to={`/projects/${project.slug}`} className="mt-2 inline-block text-xs">
         read case study →
       </Link>

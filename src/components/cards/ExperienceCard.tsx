@@ -6,7 +6,7 @@ interface ExperienceCardProps {
 }
 
 const ExperienceCard = ({ experience, detailed = false }: ExperienceCardProps) => (
-  <article className="flex gap-4 border-b border-textGray/20 py-6 first:pt-0 last:border-0 last:pb-0">
+  <article id={experience.id} className="experience-card flex scroll-mt-6 gap-4 border-b border-textGray/20 py-6 first:pt-0 last:border-0 last:pb-0">
     <div
       aria-hidden="true"
       className="flex h-16 w-16 shrink-0 items-center justify-center rounded-md border border-textGray/30 bg-textWhite/5 text-xl font-medium text-textPrimary"
@@ -21,13 +21,18 @@ const ExperienceCard = ({ experience, detailed = false }: ExperienceCardProps) =
         </div>
         <p className="shrink-0 text-xs text-textGray sm:text-right">{experience.dates}</p>
       </div>
-      <p className="mt-3 text-sm leading-6 text-textGray">{experience.summary}</p>
+      <p className="mt-3 text-sm leading-6 text-detailText">{experience.summary}</p>
       {detailed && (
         <>
-          <ul className="mt-4 space-y-2 text-sm leading-6 text-textGray">
-            {experience.highlights.map((highlight) => (
-              <li key={highlight} className="flex gap-2">
-                <span className="text-textPrimary">›</span><span>{highlight}</span>
+          <ul className="mt-4 space-y-2 text-sm leading-6 text-detailText">
+            {experience.highlights.map((highlight, index) => (
+              <li key={index} className="flex gap-2">
+                <span className="text-textPrimary">›</span>
+                <span>
+                  {typeof highlight === "string" ? highlight : (
+                    <>{highlight.leading}<strong className="font-medium text-textWhite">{highlight.metric}</strong>{highlight.trailing}</>
+                  )}
+                </span>
               </li>
             ))}
           </ul>

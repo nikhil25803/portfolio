@@ -1,6 +1,8 @@
+import type { ReactNode } from "react";
+
 // Props Interface
 interface SocailButtonInterface {
-  element: any;
+  element: ReactNode;
   url: string;
 }
 

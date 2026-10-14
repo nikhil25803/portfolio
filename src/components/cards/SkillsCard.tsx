@@ -1,6 +1,8 @@
+import type { ReactNode } from "react";
+
 interface SkillsBadgeInterface {
   sectionName: string;
-  icons: any[];
+  icons: ReactNode[];
 }
 
 const SkillsCard = (props: SkillsBadgeInterface) => {

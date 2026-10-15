@@ -12,7 +12,11 @@ const ExperienceSection = () => (
     </div>
     <div className="mt-6">
       {FEATURED_EXPERIENCES.map((experience) => (
-        <ExperienceCard key={experience.id} experience={experience} />
+        <ExperienceCard
+          key={experience.id}
+          experience={experience}
+          linkTo={`/experience#${experience.id}`}
+        />
       ))}
     </div>
   </section>

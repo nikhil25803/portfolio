@@ -89,7 +89,7 @@ const Navbar = () => {
           </Link>
         </div>
         <a
-          href="https://drive.google.com/file/d/1Jf6UxOy3fnhm6mBNdYIIJTg__vt48X96/view"
+          href="https://drive.google.com/file/d/1n8a-sUyBwAh-VsHwbkLBssWAjQkNOTES/view?usp=sharing"
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center gap-1 text-sm"

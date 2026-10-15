@@ -16,10 +16,30 @@ export function getTypewriterDelay(phase: TypewriterPhase) {
   return TYPEWRITER_DELAYS[phase];
 }
 
+export function pickRandomQuoteIndex(
+  quoteCount: number,
+  randomValue = Math.random(),
+) {
+  if (quoteCount <= 1) return 0;
+  return Math.min(Math.floor(randomValue * quoteCount), quoteCount - 1);
+}
+
+export function pickNextQuoteIndex(
+  currentIndex: number,
+  quoteCount: number,
+  randomValue = Math.random(),
+) {
+  if (quoteCount <= 1) return currentIndex;
+
+  const offset = 1 + Math.floor(randomValue * (quoteCount - 1));
+  return (currentIndex + offset) % quoteCount;
+}
+
 export function advanceTypewriter(
   state: TypewriterState,
   quoteLength: number,
   quoteCount: number,
+  randomValue = Math.random(),
 ): TypewriterState {
   if (state.phase === "typing") {
     return state.characterCount < quoteLength
@@ -34,7 +54,7 @@ export function advanceTypewriter(
   }
 
   return {
-    quoteIndex: (state.quoteIndex + 1) % quoteCount,
+    quoteIndex: pickNextQuoteIndex(state.quoteIndex, quoteCount, randomValue),
     characterCount: 0,
     phase: "typing",
   };

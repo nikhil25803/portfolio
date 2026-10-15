@@ -1,18 +1,28 @@
+import { Link } from "react-router-dom";
 import type { ExperienceEntry } from "../../types";
 
 interface ExperienceCardProps {
   experience: ExperienceEntry;
   detailed?: boolean;
+  linkTo?: string;
 }
 
 const ExperienceCard = ({
   experience,
   detailed = false,
+  linkTo,
 }: ExperienceCardProps) => (
   <article
     id={experience.id}
-    className="experience-card flex scroll-mt-6 gap-4 border-b border-textGray/20 py-6 first:pt-0 last:border-0 last:pb-0"
+    className={`experience-card relative flex scroll-mt-6 gap-4 border-b border-textGray/20 py-6 first:pt-0 last:border-0 last:pb-0 ${linkTo ? "transition hover:bg-textWhite/[0.02]" : ""}`}
   >
+    {linkTo && (
+      <Link
+        to={linkTo}
+        aria-label={`View ${experience.role} at ${experience.company}`}
+        className="absolute inset-0 z-10 rounded-md"
+      />
+    )}
     <img
       src={experience.companyLogo}
       alt={`${experience.company} company logo`}
@@ -47,13 +57,18 @@ const ExperienceCard = ({
                   {typeof highlight === "string" ? (
                     highlight
                   ) : (
-                    <>
-                      {highlight.leading}
-                      <strong className="font-medium text-textWhite">
-                        {highlight.metric}
-                      </strong>
-                      {highlight.trailing}
-                    </>
+                    highlight.parts.map((part, partIndex) =>
+                      part.metric ? (
+                        <strong
+                          key={partIndex}
+                          className="font-medium text-textWhite"
+                        >
+                          {part.text}
+                        </strong>
+                      ) : (
+                        part.text
+                      ),
+                    )
                   )}
                 </span>
               </li>

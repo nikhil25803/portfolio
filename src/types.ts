@@ -16,9 +16,14 @@ export interface ExperienceEntry {
   featured?: boolean;
 }
 
+export interface ExperienceHighlightPart {
+  text: string;
+  metric?: boolean;
+}
+
 export type ExperienceHighlight =
   | string
-  | { leading: string; metric: string; trailing: string };
+  | { parts: ExperienceHighlightPart[] };
 
 export interface ProjectCommand {
   label: string;

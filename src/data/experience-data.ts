@@ -10,37 +10,71 @@ export const EXPERIENCES: ExperienceEntry[] = [
     id: "cautio-software-engineer",
     company: "Cautio",
     companyLogo: cautioLogo,
-    role: "Software Engineer",
+    role: "Software Development Engineer",
     dates: "July 2025 to Present",
     location: "Bengaluru, India",
     summary:
       "Building high throughput backend systems for real time video, IoT data, machine learning validation, and geospatial processing across India's mobility ecosystem.",
     highlights: [
       {
-        leading:
-          "Built a real time video streaming and two way audio platform handling more than ",
-        metric: "2.5 TB each month",
-        trailing: ".",
+        parts: [
+          {
+            text: "Architected and deployed a real time video streaming and two way audio communication system using Go, FFmpeg, and EMQX (MQTT), ingesting and processing binary IoT streams at ",
+          },
+          { text: "300 GB/day", metric: true },
+          { text: " (" },
+          { text: "9 TB/month", metric: true },
+          { text: ")." },
+        ],
       },
       {
-        leading:
-          "Designed pipelines for binary IoT streams and ML validation workflows processing more than ",
-        metric: "30,000 images per hour",
-        trailing: ".",
+        parts: [
+          {
+            text: "Deployed ML models and built Python based Kafka consumers with Celery for background processing to validate ",
+          },
+          { text: "1M+", metric: true },
+          { text: " IoT generated alert images daily, filtering " },
+          { text: "70K+", metric: true },
+          { text: " noisy or invalid alerts to reduce false positives." },
+        ],
       },
       {
-        leading: "Engineered geofencing that processes more than ",
-        metric: "15 million events per day",
-        trailing: " with PostGIS and ScyllaDB.",
+        parts: [
+          {
+            text: "Developed a high throughput geofencing system using Node.js, TypeScript, PostgreSQL/PostGIS, and MongoDB to evaluate ",
+          },
+          { text: "20M+", metric: true },
+          {
+            text: " GPS pings each day through real time spatial queries and low latency alerting.",
+          },
+        ],
       },
       {
-        leading:
-          "Built a distributed image to video pipeline processing more than ",
-        metric: "200,000 images per day",
-        trailing: " through parallel and asynchronous execution.",
+        parts: [
+          {
+            text: "Engineered a distributed image to video pipeline that processed ",
+          },
+          { text: "200K+", metric: true },
+          {
+            text: " images each day, orchestrating frame sequencing and efficient video stitching through parallel, asynchronous execution.",
+          },
+        ],
       },
     ],
-    skills: ["TypeScript", "Kafka", "PostGIS", "ScyllaDB", "FFmpeg"],
+    skills: [
+      "Go",
+      "FFmpeg",
+      "EMQX",
+      "MQTT",
+      "Python",
+      "Kafka",
+      "Celery",
+      "Node.js",
+      "TypeScript",
+      "PostgreSQL",
+      "PostGIS",
+      "MongoDB",
+    ],
     featured: true,
   },
   {
@@ -120,9 +154,11 @@ export const EXPERIENCES: ExperienceEntry[] = [
       "Wrote technically reviewed learning material for Scaler's Django and Django REST Framework curriculum.",
     highlights: [
       {
-        leading: "Published ",
-        metric: "more than ten",
-        trailing: " technically and SEO reviewed articles.",
+        parts: [
+          { text: "Published " },
+          { text: "more than ten", metric: true },
+          { text: " technically and SEO reviewed articles." },
+        ],
       },
       "Explained Django, Django REST Framework, and AI concepts with practical code samples.",
     ],

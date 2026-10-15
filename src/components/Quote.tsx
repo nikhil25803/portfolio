@@ -3,6 +3,7 @@ import quotes from "../data/quotes.json";
 import {
   advanceTypewriter,
   getTypewriterDelay,
+  pickRandomQuoteIndex,
   shouldAnimate,
   type TypewriterState,
 } from "../utils/typewriter";
@@ -18,6 +19,13 @@ const Quote = () => {
   const [interactionPaused, setInteractionPaused] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
   const quote = quotes[state.quoteIndex];
+
+  useEffect(() => {
+    setState((current) => ({
+      ...current,
+      quoteIndex: pickRandomQuoteIndex(quotes.length),
+    }));
+  }, []);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");

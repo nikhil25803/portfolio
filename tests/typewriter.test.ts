@@ -3,6 +3,8 @@ import test from "node:test";
 import {
   advanceTypewriter,
   getTypewriterDelay,
+  pickNextQuoteIndex,
+  pickRandomQuoteIndex,
   shouldAnimate,
   TYPEWRITER_DELAYS,
   type TypewriterState,
@@ -20,11 +22,37 @@ test("types, holds, and deletes a quote", () => {
   assert.equal(state.characterCount, 0);
 });
 
-test("wraps from the final quote to the first", () => {
+test("selects a deterministic random quote on page load", () => {
+  assert.equal(pickRandomQuoteIndex(5, 0), 0);
+  assert.equal(pickRandomQuoteIndex(5, 0.5), 2);
+  assert.equal(pickRandomQuoteIndex(5, 0.999999), 4);
+});
+
+test("always selects an in-range initial quote", () => {
+  for (const randomValue of [0, 0.25, 0.5, 0.999999]) {
+    const index = pickRandomQuoteIndex(5, randomValue);
+    assert.ok(index >= 0 && index < 5);
+  }
+});
+
+test("keeps the current quote when only one quote exists", () => {
+  assert.equal(pickNextQuoteIndex(0, 1, 0.5), 0);
+});
+
+test("never immediately repeats a quote", () => {
+  for (let current = 0; current < 4; current += 1) {
+    for (const randomValue of [0, 0.25, 0.5, 0.999999]) {
+      assert.notEqual(pickNextQuoteIndex(current, 4, randomValue), current);
+    }
+  }
+});
+
+test("advances to a random non-repeating quote after deletion", () => {
   const state = advanceTypewriter(
     { quoteIndex: 2, characterCount: 0, phase: "deleting" },
     4,
-    3,
+    4,
+    0.5,
   );
   assert.deepEqual(state, { quoteIndex: 0, characterCount: 0, phase: "typing" });
 });

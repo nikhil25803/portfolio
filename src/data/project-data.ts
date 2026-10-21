@@ -1,5 +1,6 @@
 import IMAGES from "../images/Images";
-import kafkaesqueImage from "../assets/project-kafkaesque.png";
+import kafkaesqueImage from "../assets/project-kafkaesque.webp";
+import kafkaesqueSocialImage from "../assets/project-kafkaesque-social.jpg";
 import purrpeekImage from "../assets/project-purrpeek.png";
 import wordlyImage from "../assets/project-wordly.png";
 import bloggingPlatformThumbnail from "../assets/thumbnails/projects/blogging-platform.webp";
@@ -9,6 +10,16 @@ import foodVisionThumbnail from "../assets/thumbnails/projects/food-vision.webp"
 import fundRaisersThumbnail from "../assets/thumbnails/projects/fund-raisers.webp";
 import jobsApiThumbnail from "../assets/thumbnails/projects/jobs-api.webp";
 import kafkaesqueThumbnail from "../assets/thumbnails/projects/kafkaesque.webp";
+import kafkaesqueBrokersThumbnail from "../assets/thumbnails/projects/kafkaesque-brokers.webp";
+import kafkaesqueConsumerGroupsThumbnail from "../assets/thumbnails/projects/kafkaesque-consumer-groups.webp";
+import kafkaesqueConsumerSummaryThumbnail from "../assets/thumbnails/projects/kafkaesque-consumer-summary.webp";
+import kafkaesqueDashboardThumbnail from "../assets/thumbnails/projects/kafkaesque-dashboard.webp";
+import kafkaesqueHealthThumbnail from "../assets/thumbnails/projects/kafkaesque-cluster-health.webp";
+import kafkaesqueLagThumbnail from "../assets/thumbnails/projects/kafkaesque-partition-lag.webp";
+import kafkaesqueLoginThumbnail from "../assets/thumbnails/projects/kafkaesque-login.webp";
+import kafkaesqueRolesThumbnail from "../assets/thumbnails/projects/kafkaesque-roles.webp";
+import kafkaesqueTopicsThumbnail from "../assets/thumbnails/projects/kafkaesque-topics.webp";
+import kafkaesqueUsersThumbnail from "../assets/thumbnails/projects/kafkaesque-users.webp";
 import nutriVistaThumbnail from "../assets/thumbnails/projects/nutri-vista.webp";
 import purrpeekThumbnail from "../assets/thumbnails/projects/purrpeek.webp";
 import reviewItThumbnail from "../assets/thumbnails/projects/review-it.webp";
@@ -21,61 +32,113 @@ export const PROJECTS: Project[] = [
     slug: "kafkaesque",
     name: "Kafkaesque",
     tagline:
-      "A read only Kafka inspector built for understanding a cluster before it becomes an incident.",
+      "Kafka cluster inspection and observability from a CLI and web dashboard.",
     githubUrl: "https://github.com/nikhil25803/kafkaesque",
     image: kafkaesqueImage,
     thumbnail: kafkaesqueThumbnail,
-    imageAlt: "Kafkaesque product banner",
+    imageAlt:
+      "Kafkaesque Kafka cluster inspection CLI and web dashboard banner",
+    seoTitle: "Kafkaesque | Kafka CLI and Web Observability Tool",
+    seoDescription:
+      "Kafkaesque is a read only Kafka observability tool with a Go CLI, consumer lag inspection, web dashboard, JSON API, and secure TLS, mTLS, and SASL connections.",
+    socialImage: kafkaesqueSocialImage,
+    galleryLayout: "grid",
     tech: ["Go", "Kafka", "HTMX", "PostgreSQL", "Docker"],
     featured: true,
     commands: [
       {
-        label: "Install the CLI",
-        code: "curl -fsSL https://raw.githubusercontent.com/nikhil25803/kafkaesque/main/install.sh | sh",
+        label: "Install the latest CLI",
+        code: 'curl -fsSL https://raw.githubusercontent.com/nikhil25803/kafkaesque/main/install.sh | sh\nexport PATH="$HOME/.local/bin:$PATH"',
       },
       {
-        label: "Inspect a cluster",
-        code: "kafkaesque --health\nkafkaesque --brokers\nkafkaesque --consumer --group order-processor",
+        label: "Connect and inspect the cluster",
+        code: "export KAFKAESQUE_KAFKA_BOOTSTRAP_SERVER=localhost:9092\nkafkaesque --check\nkafkaesque --health\nkafkaesque --consumers",
       },
       {
-        label: "Run the web interface with Docker",
-        code: "docker run --rm -p 8085:8085 \\\n  -e KAFKAESQUE_KAFKA_BOOTSTRAP_SERVERS=kafka-1:9092,kafka-2:9092 \\\n  -e KAFKAESQUE_DATABASE_URL='postgres://kafkaesque:password@postgres:5432/kafkaesque?sslmode=require' \\\n  -e KAFKAESQUE_AUTHENTICATION_SUPER_ADMIN_USERNAME=super_admin \\\n  -e KAFKAESQUE_AUTHENTICATION_SUPER_ADMIN_PASSWORD='replace-with-a-long-secret' \\\n  -e KAFKAESQUE_AUTHENTICATION_COOKIE_SECURE=false \\\n  ghcr.io/nikhil25803/kafkaesque:v0.6.0",
+        label: "Use JSON output or watch mode",
+        code: "kafkaesque --brokers --output json\nkafkaesque --health --watch 10",
+      },
+      {
+        label: "Pull the web server image",
+        code: "docker pull ghcr.io/nikhil25803/kafkaesque:latest",
       },
     ],
     gallery: [
       {
+        src: IMAGES.kafkaesqueLogin,
+        thumbnail: kafkaesqueLoginThumbnail,
+        alt: "Kafkaesque secure login page for the Kafka web dashboard",
+        caption: "Login",
+      },
+      {
         src: IMAGES.kafkaesqueDashboard,
-        alt: "Kafkaesque dashboard with cluster totals and health",
-        caption: "Cluster dashboard",
+        thumbnail: kafkaesqueDashboardThumbnail,
+        alt: "Kafkaesque web dashboard showing Kafka cluster totals and health",
+        caption: "Dashboard",
       },
       {
         src: IMAGES.kafkaesqueConsumers,
-        alt: "Kafkaesque consumer groups with lag status",
-        caption: "Consumer groups and lag status",
+        thumbnail: kafkaesqueConsumerGroupsThumbnail,
+        alt: "Kafkaesque consumer groups page showing status and lag",
+        caption: "Consumer groups",
+      },
+      {
+        src: IMAGES.kafkaesqueConsumerSummary,
+        thumbnail: kafkaesqueConsumerSummaryThumbnail,
+        alt: "Kafkaesque consumer group summary with members and offsets",
+        caption: "Consumer summary",
       },
       {
         src: IMAGES.kafkaesqueLag,
+        thumbnail: kafkaesqueLagThumbnail,
         alt: "Kafkaesque partition lag and topic summary",
         caption: "Partition lag and topic summary",
       },
       {
+        src: IMAGES.kafkaesqueTopics,
+        thumbnail: kafkaesqueTopicsThumbnail,
+        alt: "Kafkaesque topics page showing partitions and replication details",
+        caption: "Topics",
+      },
+      {
+        src: IMAGES.kafkaesqueBrokers,
+        thumbnail: kafkaesqueBrokersThumbnail,
+        alt: "Kafkaesque brokers page showing Kafka broker details",
+        caption: "Brokers",
+      },
+      {
         src: IMAGES.kafkaesqueHealth,
-        alt: "Kafkaesque cluster health diagnostics",
-        caption: "Cluster health diagnostics",
+        thumbnail: kafkaesqueHealthThumbnail,
+        alt: "Kafkaesque cluster health page showing operational diagnostics",
+        caption: "Cluster health",
+      },
+      {
+        src: IMAGES.kafkaesqueUsers,
+        thumbnail: kafkaesqueUsersThumbnail,
+        alt: "Kafkaesque user administration page",
+        caption: "Users",
+      },
+      {
+        src: IMAGES.kafkaesqueRoles,
+        thumbnail: kafkaesqueRolesThumbnail,
+        alt: "Kafkaesque role and permission administration page",
+        caption: "Roles",
       },
     ],
     overview: [
-      "Kafkaesque is a lightweight Kafka observability tool for engineers who need a fast, safe picture of a cluster. It exposes brokers, topics, partitions, consumer groups, lag, assignments, and health information without mutating the cluster. The project began as a command line inspector and grew into a server with a read only HTTP API and an embedded responsive interface.",
-      "The core idea is operational safety. Kafka tooling is often either too shallow for diagnosis or powerful enough to make an accidental change. Kafkaesque deliberately stays on the inspection side of that boundary. Stable text and JSON output make it useful in a terminal or script, while the web interface gives the same information to people who prefer a visual path through consumer lag and cluster health.",
+      "Kafkaesque is a read only inspection tool for understanding a Kafka cluster without changing its state. The Go CLI reports cluster health, brokers, topics, partitions, consumer groups, members, assignments, offsets, and lag as readable terminal output or JSON.",
+      "Watch mode refreshes an inspection in place for live troubleshooting. The web server presents the same operational view through a responsive dashboard and an authenticated JSON API. Kafka connections can use plaintext, TLS, mutual TLS, SASL PLAIN, or SASL SCRAM.",
     ],
     architecture: [
-      "The application is written in Go and shares Kafka metadata work across compatible inspections. Configuration can come from YAML, environment variables, or explicit server flags, with validation applied before a connection is attempted. The server keeps the API and HTMX interface in the same distributable binary. Docker images, release archives, checksum verifying installers, and a disposable local Kafka environment make it practical to evaluate without touching a production deployment.",
-      "Health views combine cluster, partition, and consumer signals. Consumer inspection can narrow results by group or topic and expose partition offsets, lag, active members, and assignments. TLS, mutual TLS, and common SASL mechanisms cover secured clusters, while broker address overrides help with environments whose advertised listeners are not reachable from the inspector.",
+      "The CLI connects directly to Kafka and performs live inspections. The server exposes the browser interface at /ui and the JSON API under /api/v1. Both use the same collectors, so the interface does not make a loopback API request and the project does not keep a stale cluster cache.",
+      "The server uses opaque authentication tokens and stores password hashes, sessions, accounts, roles, and permissions in PostgreSQL. Kafka remains read only. PostgreSQL is used only for the application's access control data.",
+      "Kafkaesque is an inspection tool rather than a historical monitoring or cluster administration platform. It does not modify Kafka resources, browse message payloads, retain charts or history, calculate message rates, or send alerts and webhooks. Running the server currently requires PostgreSQL 18 or newer.",
     ],
     usage: [
-      "Install a published binary with the repository installer or run the container image. The installer places the executable in the user's local binary directory and verifies the release checksum before installation.",
-      "Point Kafkaesque at one or more bootstrap servers through its YAML file or environment variables. Start with the connection check, then inspect metadata, brokers, topics, consumers, or health from the CLI. JSON output is available when another tool needs to consume the result.",
-      "For the browser experience, start the server command and open the embedded UI. Use the dashboard for a cluster summary, then move into consumer groups, partition lag, topics, brokers, or health. The interface remains read only, so authentication and network placement should still follow the deployment guidance in the repository.",
+      "Install the CLI with the repository script, then add the local binary directory to PATH. Set the Kafka bootstrap server and run the connection check before requesting cluster data.",
+      "Use the health, broker, topic, partition, or consumer commands for text output. Add the JSON output option when a script needs the result. Add a watch interval to refresh a live inspection in place.",
+      "For the web experience, configure Kafka, PostgreSQL, and the initial super administrator before starting the server. Open /ui for the dashboard or use the authenticated endpoints under /api/v1 for JSON responses.",
+      "Use TLS, mutual TLS, or SASL settings when the Kafka cluster requires them. Keep Kafka and application credentials outside source control and follow the deployment guidance in the repository before exposing the server.",
     ],
   },
   {

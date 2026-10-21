@@ -36,10 +36,13 @@ const ProjectDetail = () => {
             </a>
           </div>
           <img
+            {...{ fetchpriority: "high" }}
             src={project.image}
             alt={project.imageAlt}
             width="1200"
             height="675"
+            loading="eager"
+            decoding="async"
             className="project-hero mt-8 w-full rounded-md border border-textGray/20"
           />
           <div className="mt-5 flex flex-wrap gap-2">
@@ -84,7 +87,7 @@ const ProjectDetail = () => {
         </section>
         {project.gallery && (
           <section
-            className="project-gallery"
+            className={`project-gallery ${project.galleryLayout === "grid" ? "project-gallery-grid" : ""}`}
             aria-label={`${project.name} screenshots`}
           >
             <h2>
@@ -92,13 +95,21 @@ const ProjectDetail = () => {
             </h2>
             {project.gallery.map((image) => (
               <figure key={image.src}>
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  width="1200"
-                  height="675"
-                  loading="lazy"
-                />
+                <a
+                  href={image.src}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Open ${image.caption} full size`}
+                >
+                  <img
+                    src={image.thumbnail ?? image.src}
+                    alt={image.alt}
+                    width="480"
+                    height="270"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </a>
                 <figcaption>{image.caption}</figcaption>
               </figure>
             ))}

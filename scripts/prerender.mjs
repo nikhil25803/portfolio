@@ -27,6 +27,7 @@ function renderHead(seo) {
   const description = escapeHtml(seo.description);
   const canonical = escapeHtml(seo.canonical);
   const image = escapeHtml(seo.image);
+  const imageAlt = escapeHtml(seo.imageAlt);
   const structuredData = JSON.stringify(seo.structuredData).replaceAll(
     "<",
     "\\u003c",
@@ -40,12 +41,12 @@ function renderHead(seo) {
     `<meta property="og:type" content="${seo.type}" />`,
     `<meta property="og:url" content="${canonical}" />`,
     `<meta property="og:image" content="${image}" />`,
-    `<meta property="og:image:alt" content="${title}" />`,
+    `<meta property="og:image:alt" content="${imageAlt}" />`,
     '<meta name="twitter:card" content="summary_large_image" />',
     `<meta name="twitter:title" content="${title}" />`,
     `<meta name="twitter:description" content="${description}" />`,
     `<meta name="twitter:image" content="${image}" />`,
-    `<meta name="twitter:image:alt" content="${title}" />`,
+    `<meta name="twitter:image:alt" content="${imageAlt}" />`,
     `<script id="route-structured-data" type="application/ld+json">${structuredData}</script>`,
   ].join("\n    ");
 }

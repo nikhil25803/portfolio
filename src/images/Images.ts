@@ -9,9 +9,15 @@ import fundRaisersCampaign from "../assets/projects/fund-raisers-campaign.webp";
 import fundRaisersFeatures from "../assets/projects/fund-raisers-features.webp";
 import fundRaisersHome from "../assets/projects/fund-raisers-home.webp";
 import kafkaesqueConsumers from "../assets/projects/kafkaesque-consumer-groups.webp";
+import kafkaesqueConsumerSummary from "../assets/projects/kafkaesque-consumer-summary.webp";
 import kafkaesqueHealth from "../assets/projects/kafkaesque-cluster-health.webp";
 import kafkaesqueDashboard from "../assets/projects/kafkaesque-dashboard.webp";
 import kafkaesqueLag from "../assets/projects/kafkaesque-partition-lag.webp";
+import kafkaesqueLogin from "../assets/projects/kafkaesque-login.webp";
+import kafkaesqueTopics from "../assets/projects/kafkaesque-topics.webp";
+import kafkaesqueBrokers from "../assets/projects/kafkaesque-brokers.webp";
+import kafkaesqueUsers from "../assets/projects/kafkaesque-users.webp";
+import kafkaesqueRoles from "../assets/projects/kafkaesque-roles.webp";
 import purrpeekGhosttyMongo from "../assets/projects/purrpeek-ghostty-mongo.webp";
 import purrpeekGhosttySnow from "../assets/projects/purrpeek-ghostty-snow.webp";
 import purrpeekTerminalMongo from "../assets/projects/purrpeek-terminal-mongo.webp";
@@ -42,8 +48,14 @@ const IMAGES = {
   prjectBloggingPlatform: projectBloggingPlatform,
   kafkaesqueDashboard,
   kafkaesqueConsumers,
+  kafkaesqueConsumerSummary,
   kafkaesqueLag,
+  kafkaesqueLogin,
   kafkaesqueHealth,
+  kafkaesqueTopics,
+  kafkaesqueBrokers,
+  kafkaesqueUsers,
+  kafkaesqueRoles,
   wordlyHome,
   wordlyGameplay,
   wordlyResult,

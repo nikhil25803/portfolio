@@ -9,6 +9,7 @@ export interface SeoData {
   description: string;
   canonical: string;
   image: string;
+  imageAlt: string;
   type: "profile" | "website" | "article";
   structuredData: Record<string, unknown> | Record<string, unknown>[];
 }
@@ -45,12 +46,14 @@ function baseSeo(
   description: string,
   type: SeoData["type"] = "website",
   image = socialCard,
+  imageAlt = title,
 ): Omit<SeoData, "structuredData"> {
   return {
     title,
     description,
     canonical: canonicalPath(pathname),
     image: new URL(image, SITE_ORIGIN).href,
+    imageAlt,
     type,
   };
 }
@@ -114,20 +117,22 @@ export function getSeoData(pathname: string): SeoData {
     return {
       ...baseSeo(
         pathname,
-        `${project.name} Project Details | Nikhil Raj`,
-        `${project.tagline} Explore its architecture, technology, installation, usage, screenshots, and source code.`,
+        project.seoTitle ?? `${project.name} Project Details | Nikhil Raj`,
+        project.seoDescription ??
+          `${project.tagline} Explore its architecture, technology, installation, usage, screenshots, and source code.`,
         "article",
-        project.image,
+        project.socialImage ?? project.image,
+        project.imageAlt,
       ),
       structuredData: [
         {
           "@context": "https://schema.org",
           "@type": "SoftwareSourceCode",
           name: project.name,
-          description: project.tagline,
+          description: project.seoDescription ?? project.tagline,
           url: canonical,
           codeRepository: project.githubUrl,
-          programmingLanguage: project.tech,
+          programmingLanguage: project.tech[0],
           image: new URL(project.image, SITE_ORIGIN).href,
           author: { "@id": person["@id"] },
         },

@@ -38,7 +38,7 @@ const Seo = () => {
       'meta[property="og:image:alt"]',
       "property",
       "og:image:alt",
-      seo.title,
+      seo.imageAlt,
     );
     setMeta(
       'meta[name="twitter:card"]',
@@ -58,7 +58,7 @@ const Seo = () => {
       'meta[name="twitter:image:alt"]',
       "name",
       "twitter:image:alt",
-      seo.title,
+      seo.imageAlt,
     );
 
     let canonical = document.head.querySelector<HTMLLinkElement>(

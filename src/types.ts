@@ -21,9 +21,7 @@ export interface ExperienceHighlightPart {
   metric?: boolean;
 }
 
-export type ExperienceHighlight =
-  | string
-  | { parts: ExperienceHighlightPart[] };
+export type ExperienceHighlight = string | { parts: ExperienceHighlightPart[] };
 
 export interface ProjectCommand {
   label: string;
@@ -32,6 +30,7 @@ export interface ProjectCommand {
 
 export interface ProjectImage {
   src: string;
+  thumbnail?: string;
   alt: string;
   caption: string;
 }
@@ -44,6 +43,10 @@ export interface Project {
   image: string;
   thumbnail: string;
   imageAlt: string;
+  seoTitle?: string;
+  seoDescription?: string;
+  socialImage?: string;
+  galleryLayout?: "grid";
   tech: string[];
   overview: string[];
   architecture: string[];

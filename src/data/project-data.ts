@@ -1,8 +1,16 @@
 import IMAGES from "../images/Images";
 import kafkaesqueImage from "../assets/project-kafkaesque.webp";
+import kafkaesqueHeroSmall from "../assets/project-kafkaesque-hero-small.webp";
 import kafkaesqueSocialImage from "../assets/project-kafkaesque-social.jpg";
 import purrpeekImage from "../assets/project-purrpeek.png";
 import wordlyImage from "../assets/project-wordly.png";
+import countRepsHeroSmall from "../assets/projects/hero-small/count-reps.webp";
+import fastapiMicroserviceHeroSmall from "../assets/projects/hero-small/fastapi-microservice.webp";
+import foodVisionHeroSmall from "../assets/projects/hero-small/food-vision.webp";
+import fundRaisersHeroSmall from "../assets/projects/hero-small/fund-raisers.webp";
+import purrpeekHeroSmall from "../assets/projects/hero-small/purrpeek.webp";
+import scrapeUpHeroSmall from "../assets/projects/hero-small/scrape-up.webp";
+import wordlyHeroSmall from "../assets/projects/hero-small/wordly.webp";
 import bloggingPlatformThumbnail from "../assets/thumbnails/projects/blogging-platform.webp";
 import countRepsThumbnail from "../assets/thumbnails/projects/count-reps.webp";
 import fastapiMicroserviceThumbnail from "../assets/thumbnails/projects/fastapi-microservice.webp";
@@ -12,16 +20,24 @@ import jobsApiThumbnail from "../assets/thumbnails/projects/jobs-api.webp";
 import kafkaesqueThumbnail from "../assets/thumbnails/projects/kafkaesque.webp";
 import kafkaesqueBrokersThumbnail from "../assets/thumbnails/projects/kafkaesque-brokers.webp";
 import kafkaesqueConsumerGroupsThumbnail from "../assets/thumbnails/projects/kafkaesque-consumer-groups.webp";
-import kafkaesqueConsumerSummaryThumbnail from "../assets/thumbnails/projects/kafkaesque-consumer-summary.webp";
 import kafkaesqueDashboardThumbnail from "../assets/thumbnails/projects/kafkaesque-dashboard.webp";
 import kafkaesqueHealthThumbnail from "../assets/thumbnails/projects/kafkaesque-cluster-health.webp";
-import kafkaesqueLagThumbnail from "../assets/thumbnails/projects/kafkaesque-partition-lag.webp";
-import kafkaesqueLoginThumbnail from "../assets/thumbnails/projects/kafkaesque-login.webp";
 import kafkaesqueRolesThumbnail from "../assets/thumbnails/projects/kafkaesque-roles.webp";
 import kafkaesqueTopicsThumbnail from "../assets/thumbnails/projects/kafkaesque-topics.webp";
 import kafkaesqueUsersThumbnail from "../assets/thumbnails/projects/kafkaesque-users.webp";
+import kafkaesqueSignInThumbnail from "../assets/thumbnails/projects/kafkaesque-sign-in.webp";
+import kafkaesqueAddUserThumbnail from "../assets/thumbnails/projects/kafkaesque-add-user.webp";
+import kafkaesqueCreateRoleThumbnail from "../assets/thumbnails/projects/kafkaesque-create-role.webp";
+import kafkaesqueSlackAlertsThumbnail from "../assets/thumbnails/projects/kafkaesque-slack-alerts.webp";
+import kafkaesqueCreateSlackAlertThumbnail from "../assets/thumbnails/projects/kafkaesque-create-slack-alert.webp";
+import kafkaesqueSlackAlertFiredThumbnail from "../assets/thumbnails/projects/kafkaesque-slack-alert-fired.webp";
+import kafkaesqueSlackAlertResolvedThumbnail from "../assets/thumbnails/projects/kafkaesque-slack-alert-resolved.webp";
 import nutriVistaThumbnail from "../assets/thumbnails/projects/nutri-vista.webp";
 import purrpeekThumbnail from "../assets/thumbnails/projects/purrpeek.webp";
+import purrpeekGhosttyMongoThumbnail from "../assets/thumbnails/projects/purrpeek-ghostty-mongo.webp";
+import purrpeekGhosttySnowThumbnail from "../assets/thumbnails/projects/purrpeek-ghostty-snow.webp";
+import purrpeekTerminalMongoThumbnail from "../assets/thumbnails/projects/purrpeek-terminal-mongo.webp";
+import purrpeekTerminalSnowThumbnail from "../assets/thumbnails/projects/purrpeek-terminal-snow.webp";
 import reviewItThumbnail from "../assets/thumbnails/projects/review-it.webp";
 import scrapeUpThumbnail from "../assets/thumbnails/projects/scrape-up.webp";
 import wordlyThumbnail from "../assets/thumbnails/projects/wordly.webp";
@@ -32,113 +48,379 @@ export const PROJECTS: Project[] = [
     slug: "kafkaesque",
     name: "Kafkaesque",
     tagline:
-      "Kafka cluster inspection and observability from a CLI and web dashboard.",
+      "A focused Kafka monitoring dashboard, API, and CLI for understanding a cluster before it becomes a production incident.",
     githubUrl: "https://github.com/nikhil25803/kafkaesque",
     image: kafkaesqueImage,
+    heroSmall: kafkaesqueHeroSmall,
     thumbnail: kafkaesqueThumbnail,
     imageAlt:
-      "Kafkaesque Kafka cluster inspection CLI and web dashboard banner",
-    seoTitle: "Kafkaesque | Kafka CLI and Web Observability Tool",
+      "Kafkaesque monitoring dashboard for Apache Kafka clusters",
+    seoTitle: "Kafkaesque | Kafka Monitoring Dashboard, API and CLI",
     seoDescription:
-      "Kafkaesque is a read only Kafka observability tool with a Go CLI, consumer lag inspection, web dashboard, JSON API, and secure TLS, mTLS, and SASL connections.",
+      "Kafkaesque is a read-only Kafka monitoring dashboard, API, and CLI for cluster health, hourly topic activity, consumer lag, RBAC, and Slack lag alerts.",
     socialImage: kafkaesqueSocialImage,
-    galleryLayout: "grid",
-    tech: ["Go", "Kafka", "HTMX", "PostgreSQL", "Docker"],
+    tech: ["Go", "Apache Kafka", "HTMX", "PostgreSQL 18+", "Docker", "Slack"],
     featured: true,
-    commands: [
-      {
-        label: "Install the latest CLI",
-        code: 'curl -fsSL https://raw.githubusercontent.com/nikhil25803/kafkaesque/main/install.sh | sh\nexport PATH="$HOME/.local/bin:$PATH"',
-      },
-      {
-        label: "Connect and inspect the cluster",
-        code: "export KAFKAESQUE_KAFKA_BOOTSTRAP_SERVER=localhost:9092\nkafkaesque --check\nkafkaesque --health\nkafkaesque --consumers",
-      },
-      {
-        label: "Use JSON output or watch mode",
-        code: "kafkaesque --brokers --output json\nkafkaesque --health --watch 10",
-      },
-      {
-        label: "Pull the web server image",
-        code: "docker pull ghcr.io/nikhil25803/kafkaesque:latest",
-      },
-    ],
-    gallery: [
-      {
-        src: IMAGES.kafkaesqueLogin,
-        thumbnail: kafkaesqueLoginThumbnail,
-        alt: "Kafkaesque secure login page for the Kafka web dashboard",
-        caption: "Login",
-      },
-      {
-        src: IMAGES.kafkaesqueDashboard,
-        thumbnail: kafkaesqueDashboardThumbnail,
-        alt: "Kafkaesque web dashboard showing Kafka cluster totals and health",
-        caption: "Dashboard",
-      },
-      {
-        src: IMAGES.kafkaesqueConsumers,
-        thumbnail: kafkaesqueConsumerGroupsThumbnail,
-        alt: "Kafkaesque consumer groups page showing status and lag",
-        caption: "Consumer groups",
-      },
-      {
-        src: IMAGES.kafkaesqueConsumerSummary,
-        thumbnail: kafkaesqueConsumerSummaryThumbnail,
-        alt: "Kafkaesque consumer group summary with members and offsets",
-        caption: "Consumer summary",
-      },
-      {
-        src: IMAGES.kafkaesqueLag,
-        thumbnail: kafkaesqueLagThumbnail,
-        alt: "Kafkaesque partition lag and topic summary",
-        caption: "Partition lag and topic summary",
-      },
-      {
-        src: IMAGES.kafkaesqueTopics,
-        thumbnail: kafkaesqueTopicsThumbnail,
-        alt: "Kafkaesque topics page showing partitions and replication details",
-        caption: "Topics",
-      },
-      {
-        src: IMAGES.kafkaesqueBrokers,
-        thumbnail: kafkaesqueBrokersThumbnail,
-        alt: "Kafkaesque brokers page showing Kafka broker details",
-        caption: "Brokers",
-      },
-      {
-        src: IMAGES.kafkaesqueHealth,
-        thumbnail: kafkaesqueHealthThumbnail,
-        alt: "Kafkaesque cluster health page showing operational diagnostics",
-        caption: "Cluster health",
-      },
-      {
-        src: IMAGES.kafkaesqueUsers,
-        thumbnail: kafkaesqueUsersThumbnail,
-        alt: "Kafkaesque user administration page",
-        caption: "Users",
-      },
-      {
-        src: IMAGES.kafkaesqueRoles,
-        thumbnail: kafkaesqueRolesThumbnail,
-        alt: "Kafkaesque role and permission administration page",
-        caption: "Roles",
-      },
-    ],
     overview: [
-      "Kafkaesque is a read only inspection tool for understanding a Kafka cluster without changing its state. The Go CLI reports cluster health, brokers, topics, partitions, consumer groups, members, assignments, offsets, and lag as readable terminal output or JSON.",
-      "Watch mode refreshes an inspection in place for live troubleshooting. The web server presents the same operational view through a responsive dashboard and an authenticated JSON API. Kafka connections can use plaintext, TLS, mutual TLS, SASL PLAIN, or SASL SCRAM.",
+      "Monitoring Kafka is essential, but the standard command-line tools are best suited to one-off checks and broad observability platforms can require more infrastructure than a team needs. Kafkaesque provides a focused, read-only interface where developers and operators can understand a cluster without producing messages or changing Kafka resources.",
+      "The responsive web UI brings connection status, cluster health, brokers, topics, hourly message rates, consumer groups, and partition lag into one place. Teams can create Slack alerts with configurable average or maximum lag thresholds, receive one notification when a threshold is breached, and optionally receive a follow-up when the lag resolves.",
+      "The same Go application also exposes an authenticated JSON API and a standalone CLI. Kafka connections support plaintext, TLS, mutual TLS, SASL PLAIN, and SASL SCRAM. PostgreSQL is reserved for application accounts, sessions, roles, permissions, migrations, and alert subscriptions. It never stores Kafka messages or historical cluster metrics.",
     ],
     architecture: [
-      "The CLI connects directly to Kafka and performs live inspections. The server exposes the browser interface at /ui and the JSON API under /api/v1. Both use the same collectors, so the interface does not make a loopback API request and the project does not keep a stale cluster cache.",
-      "The server uses opaque authentication tokens and stores password hashes, sessions, accounts, roles, and permissions in PostgreSQL. Kafka remains read only. PostgreSQL is used only for the application's access control data.",
-      "Kafkaesque is an inspection tool rather than a historical monitoring or cluster administration platform. It does not modify Kafka resources, browse message payloads, retain charts or history, calculate message rates, or send alerts and webhooks. Running the server currently requires PostgreSQL 18 or newer.",
+      "Browser and API requests enter the same Kafkaesque server process. The UI uses secure session cookies, API clients use opaque access and refresh tokens, and both pass through PostgreSQL-backed authentication and role-based access control before reaching shared live Kafka collectors. The UI is server-rendered with HTMX and still supports filtering and pagination as ordinary links and forms when JavaScript is unavailable.",
+      "The collectors read metadata, consumer groups, offsets, and assignments directly from Kafka. Separate monitors reuse those collectors to calculate hourly topic activity and evaluate lag-alert subscriptions, then deliver firing and resolved notifications to Slack. The standalone CLI bypasses PostgreSQL and connects directly to Kafka for text, JSON, and watch-mode inspection.",
+      "Kafkaesque remains deliberately read-only: it does not create topics, alter cluster resources, produce or browse messages, or store Kafka payloads. The server ships as one Go binary with embedded UI assets, runs as a non-root container, and applies versioned PostgreSQL migrations during startup.",
     ],
-    usage: [
-      "Install the CLI with the repository script, then add the local binary directory to PATH. Set the Kafka bootstrap server and run the connection check before requesting cluster data.",
-      "Use the health, broker, topic, partition, or consumer commands for text output. Add the JSON output option when a script needs the result. Add a watch interval to refresh a live inspection in place.",
-      "For the web experience, configure Kafka, PostgreSQL, and the initial super administrator before starting the server. Open /ui for the dashboard or use the authenticated endpoints under /api/v1 for JSON responses.",
-      "Use TLS, mutual TLS, or SASL settings when the Kafka cluster requires them. Keep Kafka and application credentials outside source control and follow the deployment guidance in the repository before exposing the server.",
+    features: [
+      {
+        concern: "Web monitoring",
+        details: [
+          "Dashboard for connection status, cluster totals, and health",
+          "Broker, topic, partition, and consumer-group inspection",
+          "Hourly topic message rates and partition-level consumer lag",
+          "Responsive server-rendered UI with configurable refresh intervals",
+        ],
+      },
+      {
+        concern: "Kafka connectivity",
+        details: [
+          "Plaintext, TLS, and mutual TLS connections",
+          "SASL PLAIN, SCRAM-SHA-256, and SCRAM-SHA-512 authentication",
+          "Broker address overrides for containers, Kubernetes, and split networks",
+        ],
+      },
+      {
+        concern: "Authentication and access",
+        details: [
+          "PostgreSQL-backed users, sessions, built-in roles, and custom RBAC",
+          "Secure browser cookies with CSRF protection",
+          "Opaque API access and refresh tokens",
+        ],
+      },
+      {
+        concern: "Slack lag alerts",
+        details: [
+          "Average or maximum partition-lag thresholds",
+          "Slack Incoming Webhook and Workflow Builder trigger support",
+          "One firing notification per breach with an optional resolution notification",
+        ],
+      },
+      {
+        concern: "API and CLI",
+        details: [
+          "Authenticated JSON API for Kafka inspection",
+          "Text or JSON CLI output with in-place watch mode",
+          "Direct CLI inspection without PostgreSQL or an application account",
+        ],
+      },
+      {
+        concern: "Deployment",
+        details: [
+          "One Go binary with embedded UI assets and no Node.js runtime",
+          "Non-root Linux containers for AMD64 and ARM64",
+          "Versioned PostgreSQL migrations applied during server startup",
+        ],
+      },
+    ],
+    guide: {
+      title: "run the web UI with Docker",
+      intro: [
+        "Kafkaesque publishes a multi-platform container containing the API and embedded web UI. The container runs kafkaesque serve as a non-root user and listens on port 8085 by default.",
+      ],
+      requirements: [
+        "Kafka bootstrap addresses that the container can reach, including the broker, coordinator, and partition-leader addresses returned by Kafka.",
+        "A dedicated PostgreSQL 18 or newer database and a role allowed to create and modify objects in its public schema.",
+        "A Super Admin username, email address, and policy-compliant password.",
+        "A stable encryption key used to protect Slack webhook URLs.",
+      ],
+      steps: [
+        {
+          title: "Generate the alert encryption key and pull the image",
+          body: [
+            "Generate this key once and keep it in a secret manager. Pull latest for a local trial. Production deployments should pin an exact release tag or image digest.",
+          ],
+          commands: [
+            { label: "Generate a 32-byte key", code: "openssl rand -base64 32" },
+            {
+              label: "Pull Kafkaesque",
+              code: "docker pull ghcr.io/nikhil25803/kafkaesque:latest",
+            },
+          ],
+        },
+        {
+          title: "Option A: mount a YAML configuration",
+          body: [
+            "Create config.yaml, replace every CHANGE_ME value, and mount the file read-only. Use a Docker network hostname, host.docker.internal where supported, or another address reachable from inside the container. Localhost points back to the container itself.",
+          ],
+          commands: [
+            {
+              label: "config.yaml",
+              code: `kafka:
+  bootstrap_server: kafka.example.com:9092
+
+authentication:
+  super_admin_username: super_admin
+  super_admin_email: super-admin@example.com
+  super_admin_password: CHANGE_ME_A1_
+  super_admin_recovery: verify
+  cookie_secure: false
+
+database:
+  url: postgres://kafkaesque:CHANGE_ME@postgres.example.com:5432/kafkaesque?sslmode=require
+
+alerts:
+  encryption_key: CHANGE_ME_WITH_OPENSSL_OUTPUT
+
+api:
+  host: 0.0.0.0
+  port: 8085`,
+            },
+            {
+              label: "Start with the mounted file",
+              code: `docker run --rm --name kafkaesque \\
+  --publish 8085:8085 \\
+  --volume "$PWD/config.yaml:/config.yaml:ro" \\
+  ghcr.io/nikhil25803/kafkaesque:latest \\
+  serve --config /config.yaml`,
+            },
+          ],
+        },
+        {
+          title: "Option B: configure with environment variables",
+          body: [
+            "Every server setting also has an environment-variable form. This is convenient when a deployment platform injects secrets without a mounted configuration file.",
+          ],
+          commands: [
+            {
+              label: "Start with environment variables",
+              code: `docker run --rm --name kafkaesque \\
+  --publish 8085:8085 \\
+  --env KAFKAESQUE_KAFKA_BOOTSTRAP_SERVER=kafka.example.com:9092 \\
+  --env KAFKAESQUE_AUTHENTICATION_SUPER_ADMIN_USERNAME=super_admin \\
+  --env KAFKAESQUE_AUTHENTICATION_SUPER_ADMIN_EMAIL=super-admin@example.com \\
+  --env KAFKAESQUE_AUTHENTICATION_SUPER_ADMIN_PASSWORD=CHANGE_ME_A1_ \\
+  --env KAFKAESQUE_AUTHENTICATION_SUPER_ADMIN_RECOVERY=verify \\
+  --env KAFKAESQUE_AUTHENTICATION_COOKIE_SECURE=false \\
+  --env 'KAFKAESQUE_DATABASE_URL=postgres://kafkaesque:CHANGE_ME@postgres.example.com:5432/kafkaesque?sslmode=require' \\
+  --env KAFKAESQUE_ALERTS_ENCRYPTION_KEY=CHANGE_ME_WITH_OPENSSL_OUTPUT \\
+  --env KAFKAESQUE_API_HOST=0.0.0.0 \\
+  --env KAFKAESQUE_API_PORT=8085 \\
+  ghcr.io/nikhil25803/kafkaesque:latest serve`,
+            },
+          ],
+        },
+        {
+          title: "Verify the process and sign in",
+          body: [
+            "The health endpoint verifies that the server process is responding. Then open the UI and sign in with the configured Super Admin account.",
+          ],
+          commands: [
+            {
+              label: "Health check",
+              code: "curl --fail http://127.0.0.1:8085/api/v1/health",
+            },
+            { label: "Web UI", code: "http://127.0.0.1:8085/ui" },
+          ],
+        },
+      ],
+      notes: [
+        "The examples disable secure cookies only for trusted local HTTP. Keep secure cookies enabled when Kafkaesque is served behind HTTPS.",
+        "Inject database passwords, Super Admin credentials, SASL credentials, and the alert encryption key through the deployment platform. Never commit a populated configuration file.",
+        "Production PostgreSQL connections should enforce TLS, while Kafka connections should use TLS, mutual TLS, or SASL as required by the cluster.",
+      ],
+    },
+    walkthrough: [
+      {
+        title: "Dashboard and cluster monitoring",
+        intro:
+          "Operational pages read Kafka at request time, providing a current view without maintaining a stale cluster cache.",
+        rows: [
+          [
+            {
+              src: IMAGES.kafkaesqueDashboard,
+              thumbnail: kafkaesqueDashboardThumbnail,
+              alt: "Kafkaesque dashboard showing connection status, cluster totals, consumer groups, and cluster health",
+              caption: "Dashboard",
+              width: 1440,
+              height: 784,
+              description: [
+                "The landing page confirms the active Kafka connection and summarizes brokers, topics, partitions, and consumer groups. Health cards surface unhealthy partitions and lagging consumers immediately, giving operators a fast starting point before opening a detailed view.",
+              ],
+            },
+          ],
+          [
+            {
+              src: IMAGES.kafkaesqueConsumers,
+              thumbnail: kafkaesqueConsumerGroupsThumbnail,
+              alt: "Kafkaesque consumer groups list with search, state filtering, and lag status",
+              caption: "Consumer Groups",
+              width: 1440,
+              height: 787,
+              description: [
+                "Consumer groups can be searched and filtered by coordinator state or lag health. Each row combines group state, active membership, topic coverage, and aggregate lag so an idle, rebalancing, or falling-behind workload stands out before drilling into partition assignments.",
+              ],
+            },
+            {
+              src: IMAGES.kafkaesqueTopics,
+              thumbnail: kafkaesqueTopicsThumbnail,
+              alt: "Kafkaesque topics list showing topic levels, partitions, replication, and hourly message rates",
+              caption: "Topics",
+              width: 1440,
+              height: 786,
+              description: [
+                "The topics view separates internal and application topics and reports partition count, replication, and hourly activity. Search and pagination keep large clusters manageable, while message-rate changes help distinguish quiet topics from active data paths.",
+              ],
+            },
+          ],
+          [
+            {
+              src: IMAGES.kafkaesqueBrokers,
+              thumbnail: kafkaesqueBrokersThumbnail,
+              alt: "Kafkaesque brokers list showing advertised addresses, effective connection addresses, and racks",
+              caption: "Brokers",
+              width: 1440,
+              height: 786,
+              description: [
+                "Broker inspection shows IDs, rack placement, advertised listeners, and the effective addresses Kafkaesque uses. Displaying both advertised and overridden addresses makes container, Kubernetes, and split-network connection problems easier to diagnose.",
+              ],
+            },
+            {
+              src: IMAGES.kafkaesqueHealth,
+              thumbnail: kafkaesqueHealthThumbnail,
+              alt: "Kafkaesque cluster health page showing cluster, partition, and consumer diagnostics",
+              caption: "Cluster Health",
+              width: 1440,
+              height: 785,
+              description: [
+                "Cluster Health brings broker availability, leaderless or under-replicated partitions, offline replicas, and consumer lag thresholds together. Healthy, warning, and unhealthy states use the configured lag thresholds so the same policy is reflected across the UI, API, and alerts.",
+              ],
+            },
+          ],
+        ],
+      },
+      {
+        title: "Access and settings",
+        intro:
+          "PostgreSQL-backed accounts and roles protect the browser and API while every authenticated role retains read-only Kafka inspection access.",
+        rows: [
+          [
+            {
+              src: IMAGES.kafkaesqueSignIn,
+              thumbnail: kafkaesqueSignInThumbnail,
+              alt: "Kafkaesque sign-in page with account credentials and product branding",
+              caption: "Sign in",
+              width: 1440,
+              height: 784,
+              description: [
+                "Browser users authenticate through a focused sign-in screen and receive secure session cookies protected against cross-site request forgery. The initial Super Admin comes from server configuration. Additional accounts can sign in immediately after creation.",
+              ],
+            },
+          ],
+          [
+            {
+              src: IMAGES.kafkaesqueUsers,
+              thumbnail: kafkaesqueUsersThumbnail,
+              alt: "Kafkaesque user settings showing account details, assigned roles, and pagination",
+              caption: "Settings · Users",
+              width: 1440,
+              height: 784,
+              description: [
+                "Authorized administrators can search and page through accounts, review assigned roles, and manage access without touching Kafka. User records, password hashes, sessions, and role assignments remain isolated in the dedicated PostgreSQL database.",
+              ],
+            },
+            {
+              src: IMAGES.kafkaesqueRoles,
+              thumbnail: kafkaesqueRolesThumbnail,
+              alt: "Kafkaesque role settings showing system roles, permissions, and assigned users",
+              caption: "Settings · Roles",
+              width: 1440,
+              height: 785,
+              description: [
+                "The role list exposes built-in Super Admin, Admin, and User roles alongside custom roles. Permission summaries and assigned-user counts make it clear who can manage accounts, roles, and alert subscriptions while Kafka access stays read-only.",
+              ],
+            },
+          ],
+          [
+            {
+              src: IMAGES.kafkaesqueAddUser,
+              thumbnail: kafkaesqueAddUserThumbnail,
+              alt: "Kafkaesque add-user form with identity, password, and role fields",
+              caption: "Add User",
+              width: 1440,
+              height: 786,
+              description: [
+                "The account form captures identity, a policy-compliant initial password, and one or more roles in a single workflow. Validation is shared with authentication so newly created users can sign in without a separate activation step.",
+              ],
+            },
+            {
+              src: IMAGES.kafkaesqueCreateRole,
+              thumbnail: kafkaesqueCreateRoleThumbnail,
+              alt: "Kafkaesque create-role form with account, role, and alert permissions",
+              caption: "Create Role",
+              width: 1440,
+              height: 785,
+              description: [
+                "Custom roles group only the administrative capabilities a team needs. Account, role, and alert-management permissions can be selected independently, supporting least-privilege operational access without introducing Kafka write permissions.",
+              ],
+            },
+          ],
+        ],
+      },
+      {
+        title: "Slack alert lifecycle",
+        intro:
+          "Lag subscriptions turn consumer health thresholds into actionable Slack notifications without repeatedly notifying for the same incident.",
+        rows: [
+          [
+            {
+              src: IMAGES.kafkaesqueSlackAlerts,
+              thumbnail: kafkaesqueSlackAlertsThumbnail,
+              alt: "Kafkaesque Slack alert subscription settings with status and threshold information",
+              caption: "Slack Alerts",
+              width: 1440,
+              height: 785,
+              description: [
+                "The subscriptions page lists each monitored consumer group, optional topic filter, lag calculation, threshold, delivery method, and current state. Operators can quickly distinguish enabled monitors from paused or currently firing subscriptions.",
+              ],
+            },
+            {
+              src: IMAGES.kafkaesqueCreateSlackAlert,
+              thumbnail: kafkaesqueCreateSlackAlertThumbnail,
+              alt: "Kafkaesque form for creating a Slack consumer-lag alert",
+              caption: "Create Slack Alert",
+              width: 1440,
+              height: 784,
+              description: [
+                "A subscription can monitor average or maximum partition lag for an entire consumer group or a selected topic. It supports Slack Incoming Webhooks and Workflow Builder triggers, configurable polling, and an optional resolution message when lag returns below the threshold.",
+              ],
+            },
+          ],
+          [
+            {
+              src: IMAGES.kafkaesqueSlackAlertFired,
+              thumbnail: kafkaesqueSlackAlertFiredThumbnail,
+              alt: "Slack notification showing a fired Kafkaesque consumer-lag alert",
+              caption: "Lag Alert Fired",
+              width: 1240,
+              height: 334,
+              description: [
+                "When lag crosses the configured threshold, Kafkaesque sends one firing notification with the consumer group, topic scope, observed lag, threshold, and timestamp. It records the firing state so repeated monitor cycles do not flood the channel.",
+              ],
+            },
+            {
+              src: IMAGES.kafkaesqueSlackAlertResolved,
+              thumbnail: kafkaesqueSlackAlertResolvedThumbnail,
+              alt: "Slack notification showing a resolved Kafkaesque consumer-lag alert",
+              caption: "Lag Alert Resolved",
+              width: 1262,
+              height: 322,
+              description: [
+                "After the measured lag recovers, an optional resolution notification closes the loop with the current lag and incident duration. The subscription then returns to its ready state and can report a future breach as a new incident.",
+              ],
+            },
+          ],
+        ],
+      },
     ],
   },
   {
@@ -148,6 +430,7 @@ export const PROJECTS: Project[] = [
       "One word, one day, one terminal: a persistent daily word game for the command line.",
     githubUrl: "https://github.com/nikhil25803/wordly",
     image: wordlyImage,
+    heroSmall: wordlyHeroSmall,
     thumbnail: wordlyThumbnail,
     imageAlt: "Wordly terminal game banner",
     tech: ["Go", "Bubble Tea", "Lip Gloss", "Cobra", "SQLite"],
@@ -205,6 +488,7 @@ export const PROJECTS: Project[] = [
       "System information from a cat's perspective, across every major platform. Purr approved.",
     githubUrl: "https://github.com/nikhil25803/purrpeek",
     image: purrpeekImage,
+    heroSmall: purrpeekHeroSmall,
     thumbnail: purrpeekThumbnail,
     imageAlt: "Purrpeek rendering system information in a terminal",
     tech: ["Go", "Cobra", "YAML", "Terminal Graphics", "Cross platform"],
@@ -234,21 +518,25 @@ export const PROJECTS: Project[] = [
     gallery: [
       {
         src: IMAGES.purrpeekGhosttyMongo,
+        thumbnail: purrpeekGhosttyMongoThumbnail,
         alt: "Purrpeek system report in Ghostty with Mongo artwork",
         caption: "Ghostty with image rendering",
       },
       {
         src: IMAGES.purrpeekGhosttySnow,
+        thumbnail: purrpeekGhosttySnowThumbnail,
         alt: "Purrpeek system report in Ghostty with Snow artwork",
         caption: "A second bundled artwork",
       },
       {
         src: IMAGES.purrpeekTerminalMongo,
+        thumbnail: purrpeekTerminalMongoThumbnail,
         alt: "Purrpeek Braille report in macOS Terminal",
         caption: "Braille fallback in macOS Terminal",
       },
       {
         src: IMAGES.purrpeekTerminalSnow,
+        thumbnail: purrpeekTerminalSnowThumbnail,
         alt: "Purrpeek Braille report with Snow artwork",
         caption: "Fallback output with another image",
       },
@@ -366,6 +654,7 @@ export const PROJECTS: Project[] = [
     tagline: "A warehouse and store system connected through Redis Streams.",
     githubUrl: "https://github.com/nikhil25803/fastapi-microservice",
     image: IMAGES.projectMicroservice,
+    heroSmall: fastapiMicroserviceHeroSmall,
     thumbnail: fastapiMicroserviceThumbnail,
     imageAlt: "FastAPI microservice warehouse and store interface",
     tech: ["Python", "FastAPI", "Redis Streams", "React", "SQLite", "Shell"],
@@ -415,6 +704,7 @@ export const PROJECTS: Project[] = [
       "An open fundraising platform for projects, communities, and startup ideas.",
     githubUrl: "https://github.com/nikhil25803/fundRaiser",
     image: IMAGES.projectFundsraiser,
+    heroSmall: fundRaisersHeroSmall,
     thumbnail: fundRaisersThumbnail,
     imageAlt: "Fund Raisers crowdfunding platform",
     tech: ["Python", "Django", "Bootstrap", "SQLite", "JavaScript", "Razorpay"],
@@ -462,6 +752,7 @@ export const PROJECTS: Project[] = [
       "A Python package for extracting useful public data when a formal API is unavailable.",
     githubUrl: "https://github.com/nikhil25803/scrape-up",
     image: IMAGES.projectScrapeup,
+    heroSmall: scrapeUpHeroSmall,
     thumbnail: scrapeUpThumbnail,
     imageAlt: "Scrape Up Python package preview",
     tech: ["Python", "Beautiful Soup", "Requests", "PyPI", "Web Scraping"],
@@ -489,6 +780,7 @@ export const PROJECTS: Project[] = [
       "A multiclass food image classifier with command line and desktop interfaces.",
     githubUrl: "https://github.com/nikhil25803/FoodVision",
     image: IMAGES.projectFoodvision,
+    heroSmall: foodVisionHeroSmall,
     thumbnail: foodVisionThumbnail,
     imageAlt: "Food Vision classifier preview",
     tech: ["Python", "TensorFlow", "Keras", "Pandas", "NumPy", "Tkinter"],
@@ -545,6 +837,7 @@ export const PROJECTS: Project[] = [
       "A customizable computer vision exercise counter with local progress tracking.",
     githubUrl: "https://github.com/nikhil25803/count-reps",
     image: IMAGES.projectCountreps,
+    heroSmall: countRepsHeroSmall,
     thumbnail: countRepsThumbnail,
     imageAlt: "Count Reps exercise tracking application",
     tech: ["Python", "OpenCV", "MediaPipe", "SQLite", "Computer Vision"],

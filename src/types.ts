@@ -33,6 +33,37 @@ export interface ProjectImage {
   thumbnail?: string;
   alt: string;
   caption: string;
+  width?: number;
+  height?: number;
+}
+
+export interface ProjectFeature {
+  concern: string;
+  details: string[];
+}
+
+export interface ProjectGuideStep {
+  title: string;
+  body?: string[];
+  commands?: ProjectCommand[];
+}
+
+export interface ProjectGuide {
+  title: string;
+  intro: string[];
+  requirements: string[];
+  steps: ProjectGuideStep[];
+  notes: string[];
+}
+
+export interface ProjectWalkthroughItem extends ProjectImage {
+  description: string[];
+}
+
+export interface ProjectWalkthroughSection {
+  title: string;
+  intro?: string;
+  rows: ProjectWalkthroughItem[][];
 }
 
 export interface Project {
@@ -41,6 +72,7 @@ export interface Project {
   tagline: string;
   githubUrl: string;
   image: string;
+  heroSmall?: string;
   thumbnail: string;
   imageAlt: string;
   seoTitle?: string;
@@ -50,8 +82,11 @@ export interface Project {
   tech: string[];
   overview: string[];
   architecture: string[];
-  usage: string[];
+  usage?: string[];
   commands?: ProjectCommand[];
   gallery?: ProjectImage[];
+  features?: ProjectFeature[];
+  guide?: ProjectGuide;
+  walkthrough?: ProjectWalkthroughSection[];
   featured?: boolean;
 }

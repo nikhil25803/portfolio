@@ -18,19 +18,48 @@ const profileImages: ProfileImage[] = [
   { src: profileImage2, alt: "Portrait of Nikhil Raj, software engineer" },
   { src: profileImage3, alt: "Portrait of Nikhil Raj, software engineer" },
   { src: profileImage4, alt: "Portrait of Nikhil Raj, software engineer" },
+  ...Object.values(
+    import.meta.glob<string>("../assets/thumbnails/profile/cats/*.webp", {
+      eager: true,
+      import: "default",
+      query: "?url",
+    }),
+  ).map((src) => ({ src, alt: "Cat avatar" })),
 ];
+
+interface AvatarState {
+  currentIndex: number;
+  previousIndex: number | null;
+  transitionKey: number;
+}
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [imageIndex, setImageIndex] = useState(0);
+  const [avatar, setAvatar] = useState<AvatarState>({
+    currentIndex: 0,
+    previousIndex: null,
+    transitionKey: 0,
+  });
   const menuRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
-  const canShuffle = profileImages.length > 1;
 
   useEffect(() => setMenuOpen(false), [location.pathname]);
 
   useEffect(() => {
-    setImageIndex(pickRandomImageIndex(profileImages.length));
+    setAvatar((current) => ({
+      ...current,
+      currentIndex: pickRandomImageIndex(profileImages.length),
+    }));
+
+    const intervalId = window.setInterval(() => {
+      setAvatar(({ currentIndex, transitionKey }) => ({
+        currentIndex: pickNextImageIndex(currentIndex, profileImages.length),
+        previousIndex: currentIndex,
+        transitionKey: transitionKey + 1,
+      }));
+    }, 2000);
+
+    return () => window.clearInterval(intervalId);
   }, []);
 
   useEffect(() => {
@@ -51,36 +80,31 @@ const Navbar = () => {
     };
   }, [menuOpen]);
 
-  const portrait = (
-    <img
-      src={profileImages[imageIndex].src}
-      alt={profileImages[imageIndex].alt}
-      width="64"
-      height="64"
-      className="h-16 w-16 rounded-md border border-textGray/40 object-cover"
-    />
-  );
-
   return (
     <header className="site-container flex items-start justify-between pt-10 pb-8">
       <div className="flex flex-col items-start gap-2">
         <div className="flex items-center gap-3">
-          {canShuffle ? (
-            <button
-              type="button"
-              className="rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-textPrimary"
-              aria-label="Show another profile photo"
-              onClick={() =>
-                setImageIndex((current) =>
-                  pickNextImageIndex(current, profileImages.length),
-                )
-              }
-            >
-              {portrait}
-            </button>
-          ) : (
-            portrait
-          )}
+          <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-md border border-textGray/40">
+            {avatar.previousIndex !== null && (
+              <img
+                key={`previous-${avatar.transitionKey}`}
+                src={profileImages[avatar.previousIndex].src}
+                alt=""
+                width="64"
+                height="64"
+                aria-hidden="true"
+                className="avatar-image-exit absolute inset-0 h-full w-full object-cover"
+              />
+            )}
+            <img
+              key={`current-${avatar.transitionKey}`}
+              src={profileImages[avatar.currentIndex].src}
+              alt={profileImages[avatar.currentIndex].alt}
+              width="64"
+              height="64"
+              className="avatar-image-enter absolute inset-0 h-full w-full object-cover"
+            />
+          </div>
           <Link to="/" className="no-underline">
             <span className="block text-lg font-medium text-textWhite">
               Nikhil Raj

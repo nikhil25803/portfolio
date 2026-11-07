@@ -456,6 +456,32 @@
   }
 }
 
+.avatar-image-enter {
+  animation: avatar-image-enter 200ms ease-out;
+}
+
+.avatar-image-exit {
+  animation: avatar-image-exit 200ms ease-out forwards;
+}
+
+@keyframes avatar-image-enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes avatar-image-exit {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 @media (max-width: 520px) {
   body {
     font-size: 14px;

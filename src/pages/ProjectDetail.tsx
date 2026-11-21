@@ -24,16 +24,32 @@ const ProjectDetail = () => {
               <p className="mt-3 leading-7 text-detailText">
                 {project.tagline}
               </p>
+              {project.links && (
+                <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+                  {project.links.map((link) => (
+                    <a
+                      key={link.url}
+                      href={link.url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {link.label} ↗
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`${project.name} on GitHub`}
-              className="mt-2 shrink-0 text-xl"
-            >
-              <FaGithub />
-            </a>
+            {!project.links && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`${project.name} on GitHub`}
+                className="mt-2 shrink-0 text-xl"
+              >
+                <FaGithub />
+              </a>
+            )}
           </div>
           <img
             {...{ fetchpriority: "high" }}
@@ -49,8 +65,13 @@ const ProjectDetail = () => {
                 : undefined
             }
             alt={project.imageAlt}
-            width={project.walkthrough ? 1440 : 1200}
-            height={project.walkthrough ? 576 : 675}
+            width={project.imageWidth ?? (project.walkthrough ? 1440 : 1200)}
+            height={project.imageHeight ?? (project.walkthrough ? 576 : 675)}
+            style={
+              project.imageWidth && project.imageHeight
+                ? { aspectRatio: `${project.imageWidth} / ${project.imageHeight}` }
+                : undefined
+            }
             loading="eager"
             decoding="async"
             className={`project-hero mt-8 w-full rounded-md border border-textGray/20 ${project.walkthrough ? "project-hero-banner" : ""}`}

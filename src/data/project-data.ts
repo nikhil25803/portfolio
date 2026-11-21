@@ -3,6 +3,7 @@ import kafkaesqueImage from "../assets/project-kafkaesque.webp";
 import kafkaesqueHeroSmall from "../assets/project-kafkaesque-hero-small.webp";
 import kafkaesqueSocialImage from "../assets/project-kafkaesque-social.jpg";
 import purrpeekImage from "../assets/project-purrpeek.png";
+import reaperImage from "../assets/project-reaper.webp";
 import wordlyImage from "../assets/project-wordly.png";
 import countRepsHeroSmall from "../assets/projects/hero-small/count-reps.webp";
 import fastapiMicroserviceHeroSmall from "../assets/projects/hero-small/fastapi-microservice.webp";
@@ -39,6 +40,7 @@ import purrpeekGhosttySnowThumbnail from "../assets/thumbnails/projects/purrpeek
 import purrpeekTerminalMongoThumbnail from "../assets/thumbnails/projects/purrpeek-terminal-mongo.webp";
 import purrpeekTerminalSnowThumbnail from "../assets/thumbnails/projects/purrpeek-terminal-snow.webp";
 import reviewItThumbnail from "../assets/thumbnails/projects/review-it.webp";
+import reaperThumbnail from "../assets/thumbnails/projects/reaper.webp";
 import scrapeUpThumbnail from "../assets/thumbnails/projects/scrape-up.webp";
 import wordlyThumbnail from "../assets/thumbnails/projects/wordly.webp";
 import type { Project } from "../types";
@@ -419,6 +421,96 @@ api:
               ],
             },
           ],
+        ],
+      },
+    ],
+  },
+  {
+    slug: "reaper",
+    name: "Reaper",
+    tagline:
+      "Evidence-based, language-agnostic dead-code analysis that turns repository structure into reviewable findings and focused refactoring prompts.",
+    githubUrl: "https://github.com/nikhil25803/reaper",
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/nikhil25803/reaper",
+      },
+      {
+        label: "Marketplace",
+        url: "https://github.com/marketplace/actions/reaper-evidence-analysis",
+      },
+      {
+        label: "GHCR",
+        url: "https://github.com/users/nikhil25803/packages/container/package/reaper",
+      },
+    ],
+    image: reaperImage,
+    imageWidth: 1440,
+    imageHeight: 720,
+    thumbnail: reaperThumbnail,
+    imageAlt:
+      "Reaper dead-code analysis banner showing source files connected through an evidence graph",
+    seoTitle: "Reaper | Evidence-Based Dead-Code Analysis",
+    seoDescription:
+      "Reaper builds a language-agnostic code graph, ranks possible dead code, and produces reviewable evidence and focused refactoring prompts through a CLI, Docker image, and GitHub Action.",
+    tech: ["Python", "Graphify", "llama.cpp", "GitHub Actions", "Docker"],
+    featured: true,
+    overview: [
+      "Dead code is difficult to prove in a real repository. A callable with no obvious caller may still be a public API, framework hook, decorated handler, reflection target, or configuration-driven entry point. Reaper reduces that ambiguity by collecting structural evidence before asking a model or reviewer to classify a candidate.",
+      "Reaper scans repositories in any supported language, ranks suspicious callables, and produces machine-readable and human-readable reports. It never edits or removes project source. Instead, it generates a focused, model-neutral refactoring prompt that a developer or another AI can review and act on safely.",
+    ],
+    commands: [
+      {
+        label: "Run with GitHub Actions",
+        code: `- name: Generate Reaper evidence and prompt
+  uses: nikhil25803/reaper@v0`,
+      },
+      {
+        label: "Pull and scan with Docker",
+        code: `docker pull ghcr.io/nikhil25803/reaper:latest
+docker run --rm \\
+  --user "$(id -u):$(id -g)" \\
+  --env HOME=/tmp \\
+  --volume "$PWD:/workspace" \\
+  ghcr.io/nikhil25803/reaper:latest --scan /workspace`,
+      },
+    ],
+    architecture: [
+      "Graphify first creates a local code graph under reaper-analysis. Reaper queries that graph for zero-inbound and low-connectivity callables, preserves source locations and relationships, and ranks the resulting candidates. Developers can inspect this deterministic evidence directly before involving a language model.",
+      "For assisted review, Reaper sends only focused source and relationship evidence to a local llama.cpp server. The analysis pipeline writes versioned JSON, a Markdown report, and a reusable refactoring prompt. The GitHub Action packages the complete workflow on a Linux runner, while the published container bundles the Reaper CLI and Graphify for local or CI use.",
+    ],
+    features: [
+      {
+        concern: "Evidence collection",
+        details: [
+          "Language-agnostic repository graph generated with Graphify",
+          "Ranked zero-inbound and low-connectivity callable candidates",
+          "Source locations and usage relationships retained for review",
+        ],
+      },
+      {
+        concern: "Safe analysis",
+        details: [
+          "Manual graph inspection works without an LLM",
+          "Optional local llama.cpp classification keeps source evidence local",
+          "Public APIs, hooks, decorators, and reflection targets remain review decisions",
+        ],
+      },
+      {
+        concern: "Reviewable output",
+        details: [
+          "Versioned JSON report for automation",
+          "Readable Markdown findings with supporting evidence",
+          "Model-neutral prompt containing actionable refactoring findings",
+        ],
+      },
+      {
+        concern: "Delivery",
+        details: [
+          "Marketplace Action with downloadable workflow artifacts",
+          "Published GHCR image for local and CI scans",
+          "Python CLI and Bash or PowerShell automation workflows",
         ],
       },
     ],

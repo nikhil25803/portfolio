@@ -28,6 +28,11 @@ export interface ProjectCommand {
   code: string;
 }
 
+export interface ProjectLink {
+  label: string;
+  url: string;
+}
+
 export interface ProjectImage {
   src: string;
   thumbnail?: string;
@@ -72,6 +77,8 @@ export interface Project {
   tagline: string;
   githubUrl: string;
   image: string;
+  imageWidth?: number;
+  imageHeight?: number;
   heroSmall?: string;
   thumbnail: string;
   imageAlt: string;
@@ -84,6 +91,7 @@ export interface Project {
   architecture: string[];
   usage?: string[];
   commands?: ProjectCommand[];
+  links?: ProjectLink[];
   gallery?: ProjectImage[];
   features?: ProjectFeature[];
   guide?: ProjectGuide;

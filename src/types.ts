@@ -63,6 +63,7 @@ export interface ProjectGuide {
 
 export interface ProjectWalkthroughItem extends ProjectImage {
   description: string[];
+  commands?: ProjectCommand[];
 }
 
 export interface ProjectWalkthroughSection {
@@ -95,6 +96,7 @@ export interface Project {
   gallery?: ProjectImage[];
   features?: ProjectFeature[];
   guide?: ProjectGuide;
+  walkthroughTitle?: string;
   walkthrough?: ProjectWalkthroughSection[];
   featured?: boolean;
 }

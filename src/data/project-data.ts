@@ -1,4 +1,5 @@
 import IMAGES from "../images/Images";
+import aksharaImage from "../assets/project-akshara.webp";
 import kafkaesqueImage from "../assets/project-kafkaesque.webp";
 import kafkaesqueHeroSmall from "../assets/project-kafkaesque-hero-small.webp";
 import kafkaesqueSocialImage from "../assets/project-kafkaesque-social.jpg";
@@ -13,6 +14,7 @@ import purrpeekHeroSmall from "../assets/projects/hero-small/purrpeek.webp";
 import scrapeUpHeroSmall from "../assets/projects/hero-small/scrape-up.webp";
 import wordlyHeroSmall from "../assets/projects/hero-small/wordly.webp";
 import bloggingPlatformThumbnail from "../assets/thumbnails/projects/blogging-platform.webp";
+import aksharaThumbnail from "../assets/thumbnails/projects/akshara.webp";
 import countRepsThumbnail from "../assets/thumbnails/projects/count-reps.webp";
 import fastapiMicroserviceThumbnail from "../assets/thumbnails/projects/fastapi-microservice.webp";
 import foodVisionThumbnail from "../assets/thumbnails/projects/food-vision.webp";
@@ -418,6 +420,245 @@ api:
               height: 322,
               description: [
                 "After the measured lag recovers, an optional resolution notification closes the loop with the current lag and incident duration. The subscription then returns to its ready state and can report a future breach as a new incident.",
+              ],
+            },
+          ],
+        ],
+      },
+    ],
+  },
+  {
+    slug: "akshara",
+    name: "Akshara",
+    tagline:
+      "A local-first document intelligence API that turns images and PDFs into text, structured data, and grounded answers.",
+    githubUrl: "https://github.com/nikhil25803/akshara",
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/nikhil25803/akshara",
+      },
+      {
+        label: "Article",
+        url: "https://x.com/maybe_nikhil/status/2124376798431678910?a=Djlo5wZkpu-5kBycFOc&s=20",
+      },
+      {
+        label: "GHCR",
+        url: "https://github.com/users/nikhil25803/packages/container/package/akshara",
+      },
+    ],
+    image: aksharaImage,
+    imageWidth: 1440,
+    imageHeight: 720,
+    thumbnail: aksharaThumbnail,
+    imageAlt:
+      "Akshara document intelligence pipeline for OCR, structured extraction, and local question answering",
+    seoTitle: "Akshara | Local-First Document Intelligence API",
+    seoDescription:
+      "Akshara is a self-hosted document intelligence API for OCR, PDF text extraction, caller-defined JSON Schema output, and grounded questions through a local llama.cpp model.",
+    tech: ["Python", "FastAPI", "PaddleOCR", "PyMuPDF", "llama.cpp", "Docker"],
+    featured: true,
+    overview: [
+      "OCR can recover words from a document, but most applications need meaning: an expiry date instead of every string on a licence, or the companies listed in a resume instead of a block of unstructured text. Akshara provides that complete path behind one local API for JPEG, PNG, and PDF uploads.",
+      "The service can return extracted text, map document content into a caller-defined JSON Schema, or answer a grounded one-shot question. OCR runs with PaddleOCR, PDFs use embedded text when available and fall back to OCR for scanned pages, and the optional language-model features run locally through llama.cpp so documents do not need to leave the deployment.",
+    ],
+    commands: [
+      {
+        label: "Run the OCR API with Docker",
+        code: `export API_KEY="$(openssl rand -hex 32)"
+docker volume create akshara-models
+docker run --detach --rm --name akshara \\
+  --publish 8000:8000 \\
+  --env API_KEY \\
+  --env ENABLE_LLM=false \\
+  --env OCR_LANGUAGES=en \\
+  --volume akshara-models:/models \\
+  ghcr.io/nikhil25803/akshara:latest`,
+      },
+      {
+        label: "Extract text from a document",
+        code: `curl --request POST \\
+  --header "api_key: $API_KEY" \\
+  --form "file=@document.jpg" \\
+  "http://127.0.0.1:8000/v1/ocr?language=en&extraction_source=true"`,
+      },
+    ],
+    architecture: [
+      "FastAPI accepts authenticated multipart uploads and applies MIME, file-size, PDF page-count, image-pixel, and concurrency limits before processing. PyMuPDF reads embedded PDF text directly and renders only scanned pages for PaddleOCR, while Pillow handles image input. Language selection is restricted to an environment-configured allowlist, and PaddleOCR models can persist in a mounted Docker volume.",
+      "When local inference is enabled, Akshara sends the recovered document text to a configured GGUF model through llama.cpp. The schema endpoint constrains output with the caller's JSON Schema, while the question endpoint returns an answer only when it can be grounded in the uploaded document. OCR-only deployments can leave the model disabled and use the same container with lower resource requirements.",
+    ],
+    features: [
+      {
+        concern: "Document processing",
+        details: [
+          "JPEG, PNG, and PDF text extraction",
+          "Embedded PDF text with scanned-page OCR fallback",
+          "Environment-controlled multilingual PaddleOCR",
+        ],
+      },
+      {
+        concern: "Document understanding",
+        details: [
+          "Caller-defined JSON Schema extraction",
+          "Grounded questions against uploaded documents",
+          "Optional local llama.cpp inference with GGUF models",
+        ],
+      },
+      {
+        concern: "API safeguards",
+        details: [
+          "API-key authentication for processing endpoints",
+          "Upload, page, pixel, and concurrency limits",
+          "MIME validation and configurable language allowlists",
+        ],
+      },
+      {
+        concern: "Deployment",
+        details: [
+          "CPU-first Docker image published through GHCR",
+          "Persistent model caching across container restarts",
+          "Independent OCR-only and OCR plus local-LLM modes",
+        ],
+      },
+    ],
+    walkthroughTitle: "extraction examples",
+    walkthrough: [
+      {
+        title: "Images",
+        intro:
+          "JPEG and PNG uploads are processed with PaddleOCR. Schema extraction and grounded questions require ENABLE_LLM=true and a configured GGUF model; an ungrounded question returns {\"answer\":null}.",
+        rows: [
+          [
+            {
+              src: IMAGES.aksharaDrivingLicence,
+              alt: "Sample driving licence used to demonstrate Akshara JPEG extraction",
+              caption: "Driving licence · JPEG",
+              width: 820,
+              height: 450,
+              description: [
+                "PaddleOCR extracts the licence text in one page, including holder details, dates, and blood group. Schema extraction returns the issue date as 02/02/2010 and expiry date as 01/02/2030; asking for the blood group returns B+.",
+              ],
+              commands: [
+                {
+                  label: "Schema request · issue and expiry dates",
+                  code: `curl --request POST \\
+  --header "api_key: $API_KEY" \\
+  --form "file=@driving-licence.jpg" \\
+  --form 'schema={"type":"object","properties":{"issue_date":{"type":"string"},"date_of_expiry":{"type":"string"}},"required":["issue_date","date_of_expiry"],"additionalProperties":false};type=application/json' \\
+  "http://127.0.0.1:8000/v1/ocr/schema?language=en"`,
+                },
+                {
+                  label: "Schema response",
+                  code: `{
+  "issue_date": "02/02/2010",
+  "date_of_expiry": "01/02/2030"
+}`,
+                },
+                {
+                  label: "Ask request · blood group",
+                  code: `curl --request POST \\
+  --header "api_key: $API_KEY" \\
+  --form "file=@driving-licence.jpg" \\
+  --form-string "question=What is the blood group?" \\
+  "http://127.0.0.1:8000/v1/ocr/ask?language=en"`,
+                },
+                {
+                  label: "Ask response",
+                  code: `{
+  "answer": "B+"
+}`,
+                },
+              ],
+            },
+          ],
+          [
+            {
+              src: IMAGES.aksharaQuote,
+              alt: "Charles Dickens quote image used to demonstrate Akshara PNG extraction",
+              caption: "Quote · PNG",
+              width: 1280,
+              height: 720,
+              description: [
+                "PaddleOCR recovers the quotation and attribution from the rendered image. A schema requesting the author returns Charles Dickens, and the grounded question endpoint gives the same answer when asked who wrote the quote.",
+              ],
+              commands: [
+                {
+                  label: "Schema request · author",
+                  code: `curl --request POST \\
+  --header "api_key: $API_KEY" \\
+  --form "file=@quote.png" \\
+  --form 'schema={"type":"object","properties":{"author":{"type":"string"}},"required":["author"],"additionalProperties":false};type=application/json' \\
+  "http://127.0.0.1:8000/v1/ocr/schema?language=en"`,
+                },
+                {
+                  label: "Schema response",
+                  code: `{
+  "author": "Charles Dickens"
+}`,
+                },
+                {
+                  label: "Ask request · quote author",
+                  code: `curl --request POST \\
+  --header "api_key: $API_KEY" \\
+  --form "file=@quote.png" \\
+  --form-string "question=Who wrote this quote?" \\
+  "http://127.0.0.1:8000/v1/ocr/ask?language=en"`,
+                },
+                {
+                  label: "Ask response",
+                  code: `{
+  "answer": "Charles Dickens"
+}`,
+                },
+              ],
+            },
+          ],
+        ],
+      },
+      {
+        title: "PDF documents",
+        intro:
+          "Akshara reads an existing PDF text layer directly and falls back to page-level OCR only when a page is scanned.",
+        rows: [
+          [
+            {
+              src: IMAGES.aksharaResumePreview,
+              alt: "Resume PDF preview used to demonstrate Akshara embedded-text extraction",
+              caption: "Resume · PDF",
+              width: 918,
+              height: 1188,
+              description: [
+                "This one-page resume uses embedded-text extraction instead of OCR. A schema requesting companies returns Cautio and Mswasth Tech Pvt Ltd., while the question endpoint grounds the same company list in the document text.",
+              ],
+              commands: [
+                {
+                  label: "Schema request · companies",
+                  code: `curl --request POST \\
+  --header "api_key: $API_KEY" \\
+  --form "file=@NikhilRaj_Resume_SDE.pdf" \\
+  --form 'schema={"type":"object","properties":{"companies":{"type":"array","items":{"type":"string"}}},"required":["companies"],"additionalProperties":false};type=application/json' \\
+  "http://127.0.0.1:8000/v1/ocr/schema?language=en"`,
+                },
+                {
+                  label: "Schema response",
+                  code: `{
+  "companies": ["Cautio", "Mswasth Tech Pvt Ltd."]
+}`,
+                },
+                {
+                  label: "Ask request · experience companies",
+                  code: `curl --request POST \\
+  --header "api_key: $API_KEY" \\
+  --form "file=@NikhilRaj_Resume_SDE.pdf" \\
+  --form-string "question=Which companies are listed in the Experience section?" \\
+  "http://127.0.0.1:8000/v1/ocr/ask?language=en"`,
+                },
+                {
+                  label: "Ask response",
+                  code: `{
+  "answer": "Cautio and Mswasth Tech Pvt Ltd."
+}`,
+                },
               ],
             },
           ],

@@ -1,3 +1,6 @@
+import aksharaDrivingLicence from "../assets/projects/akshara-driving-licence.webp";
+import aksharaQuote from "../assets/projects/akshara-quote.webp";
+import aksharaResumePreview from "../assets/projects/akshara-resume-preview.webp";
 import bloggingArchitecture from "../assets/projects/blogging-architecture.webp";
 import countRepsDemo from "../assets/projects/count-reps-demo.webp";
 import countRepsLandmarks from "../assets/projects/count-reps-landmarks.webp";
@@ -41,6 +44,9 @@ import projectReviewIt from "./ProjectReviewIt.png";
 import projectScrapeup from "./ProjectScrapeUp.png";
 
 const IMAGES = {
+  aksharaDrivingLicence,
+  aksharaQuote,
+  aksharaResumePreview,
   projectReviewIt,
   projectJobsapi,
   projectMicroservice,

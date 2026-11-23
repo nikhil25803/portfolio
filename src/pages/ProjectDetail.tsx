@@ -197,10 +197,11 @@ const ProjectDetail = () => {
         {project.walkthrough && (
           <section
             className="project-walkthrough"
-            aria-label={`${project.name} UI walkthrough`}
+            aria-label={`${project.name} ${project.walkthroughTitle ?? "UI walkthrough"}`}
           >
             <h2>
-              <span>#</span>UI walkthrough
+              <span>#</span>
+              {project.walkthroughTitle ?? "UI walkthrough"}
             </h2>
             {project.walkthrough.map((walkthroughSection) => (
               <div
@@ -237,6 +238,16 @@ const ProjectDetail = () => {
                           <h4>{image.caption}</h4>
                           {image.description.map((paragraph) => (
                             <p key={paragraph}>{paragraph}</p>
+                          ))}
+                          {image.commands?.map((command) => (
+                            <div key={command.label} className="project-command">
+                              <h5 className="text-xs text-textWhite">
+                                {command.label}
+                              </h5>
+                              <pre>
+                                <code>{command.code}</code>
+                              </pre>
+                            </div>
                           ))}
                         </figcaption>
                       </figure>

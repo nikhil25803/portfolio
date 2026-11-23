@@ -10,8 +10,8 @@ const { PRERENDER_ROUTES, SITE_ORIGIN, render } = await import(
   new URL("../dist-server/entry-server.js", import.meta.url)
 );
 
-if (PRERENDER_ROUTES.length !== 16 || new Set(PRERENDER_ROUTES).size !== 16) {
-  throw new Error("Expected 16 unique prerender routes");
+if (PRERENDER_ROUTES.length !== 17 || new Set(PRERENDER_ROUTES).size !== 17) {
+  throw new Error("Expected 17 unique prerender routes");
 }
 
 function escapeHtml(value) {
